@@ -9,6 +9,8 @@ public class BallsManager : MonoBehaviour
     public static BallsManager Instance => _instance;
     
 
+
+    
     [SerializeField]
     private Ball ballPrefab;
     private Ball initialBall;
@@ -46,6 +48,8 @@ public class BallsManager : MonoBehaviour
             }
         }
         
+      
+        
     }
     private void OnEnable()
     {
@@ -64,7 +68,7 @@ public class BallsManager : MonoBehaviour
             InitBall();
         }
     }
-    private void InitBall()
+    public void InitBall()
     {
         Vector3 paddlePosition = Paddle.Instance.gameObject.transform.position;
         Vector3 startingPosition = new Vector3(paddlePosition.x, paddlePosition.y + .45f, 0);
@@ -105,6 +109,6 @@ public class BallsManager : MonoBehaviour
             return;
         }
 
-
+    
     }
 }

@@ -37,12 +37,12 @@ public class Paddle : MonoBehaviour
         Vector2 direction = horizontalInput < 0 ? Vector2.left : Vector2.right;
 
         // Cast the ray to detect walls
-        RaycastHit2D hit = Physics2D.Raycast(raycastStartPoint, direction, Mathf.Abs(horizontalInput) * raycastStartPointOffset, wallLayer);
-        if (hit.collider != null)
-        {
-            // If a wall is detected, prevent further movement in that direction
-            horizontalInput = 0;
-        }
+        // RaycastHit2D hit = Physics2D.Raycast(raycastStartPoint, direction, Mathf.Abs(horizontalInput) * raycastStartPointOffset, wallLayer);
+        // if (hit.collider != null)
+        // {
+        //     // If a wall is detected, prevent further movement in that direction
+        //     horizontalInput = 0;
+        // }
 
         // Apply the movement
         Vector2 moveDirection = new Vector2(horizontalInput, 0);

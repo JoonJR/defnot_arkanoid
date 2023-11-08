@@ -7,15 +7,21 @@ TagManager:
   - Wall
   - Paddle
   - Ball
+  - DeathWall
+  - BlueBrick
+  - GreenBrick
+  - RedBrick
+  - SilverBrick
+  - YellowBrick
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - DeathWall
   - Water
   - UI
   - Wall
-  - 
+  - Paddle
   - 
   - 
   - 
