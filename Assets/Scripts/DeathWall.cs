@@ -24,6 +24,8 @@ public class DeathWall : MonoBehaviour
         if(ball != null){
             ball.DestroyBall();
             Debug.Log("Lol");
+            
+            ScoreManager.Instance.NegateLife(1);
             // ScoreManager.Instance.NegateLife(1);
             
         }

@@ -10,15 +10,8 @@ public class MenuControl : MonoBehaviour
     {
         SceneManager.LoadScene("Level1");
     }
-    public void ResumeGame()
-    {
-        
-    }
+  
     
-    public void LoadMainMenu()
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
     
     public void Quit()
     {

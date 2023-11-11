@@ -39,7 +39,7 @@ public class BallsManager : MonoBehaviour
             {
                 initialBall.transform.position = ballPosition;
             }
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && !PauseMenu.Instance.GameIsPaused)
             {
                 initialBallRb.isKinematic = false;
                 initialBallRb.AddForce(new Vector2(0, initialBallSpeed));
@@ -82,20 +82,7 @@ public class BallsManager : MonoBehaviour
 
     }
 
-    public void FreezeBalls()
-    {
-        foreach (var ball in Balls)
-        {
-            ball.FreezeBall();
-        }
-    }
-    public void UnfreezeBalls()
-    {
-        foreach (var ball in Balls)
-        {
-            ball.UnfreezeBall();
-        }
-    }
+  
     private void Awake()
     {
         if (_instance == null)

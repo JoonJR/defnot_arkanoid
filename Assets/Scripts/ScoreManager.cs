@@ -1,5 +1,7 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -7,14 +9,14 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager Instance => _instance;
 
    
-    public TextMeshProUGUI livesText;
-    private int lives = 3;
+    public TextMeshProUGUI livesText, scoreText;
+    public int lives = 3;
+    public int score = 0;
     // Start is called before the first frame update
     void Start()
     {
-        livesText.text = "Lives: 3";
+        
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -33,13 +35,80 @@ public class ScoreManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
     public void NegateLife(int life){
         lives = Mathf.Max(lives - life, 0);
         UpdateLivesUI();
+        
 
     }
     private void UpdateLivesUI(){
-        livesText.text = "Lives: " + lives;
+        if (livesText != null)
+        {
+            livesText.text = "Lives: " + lives;
+        }
+    }
+    private void UpdateScoreUI()
+    {
+        if (scoreText != null)
+        {
+            scoreText.text = "Score: " + score;
+        }
+    }
+    public void ApplyScore(int points)
+    {
+        score += points;
+        UpdateScoreUI();
+
+
+    }
+    public void CalculateScore(int brick)
+    {
+
+    }
+    private void FindUIElements()
+    {
+        GameObject livesTextObj = GameObject.FindGameObjectWithTag("LivesText");
+        if (livesTextObj != null)
+        {
+            livesText = livesTextObj.GetComponent<TextMeshProUGUI>();
+        }
+        else
+        {
+            Debug.LogError("Lives Text object not found");
+        }
+
+        GameObject scoreTextObj = GameObject.FindGameObjectWithTag("ScoreText");
+        if (scoreTextObj != null)
+        {
+            scoreText = scoreTextObj.GetComponent<TextMeshProUGUI>();
+        }
+        else
+        {
+            Debug.LogError("Score Text object not found");
+        }
+    }
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+
+        if (scene.name == "Level1")
+        {
+            FindUIElements();
+            livesText.text = "Lives: 3";
+            scoreText.text = "Score: " + score;
+        }
+        if (scene.name == "Level2")
+        {
+            FindUIElements();
+            UpdateLivesUI();
+            UpdateScoreUI();
+        }
+        if (scene.name == "Level3")
+        {
+            FindUIElements();
+            UpdateLivesUI();
+            UpdateScoreUI();
+        }
     }
 }

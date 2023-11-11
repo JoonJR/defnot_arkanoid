@@ -13,6 +13,8 @@ TagManager:
   - RedBrick
   - SilverBrick
   - YellowBrick
+  - LivesText
+  - ScoreText
   layers:
   - Default
   - TransparentFX
@@ -22,7 +24,7 @@ TagManager:
   - UI
   - Wall
   - Paddle
-  - 
+  - Brick
   - 
   - 
   - 

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3191870190966285895}
   - component: {fileID: 5093688333637729723}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: InsideSquare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8244569970466150768}
   - component: {fileID: 2171075274753552625}
   - component: {fileID: -1726604530882692236}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GreenBrick
   m_TagString: GreenBrick
   m_Icon: {fileID: 0}
