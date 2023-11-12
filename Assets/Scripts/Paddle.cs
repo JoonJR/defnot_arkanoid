@@ -9,6 +9,7 @@ public class Paddle : MonoBehaviour
     public static Paddle Instance => _instance;
 
     public float moveSpeed = 10.0f;
+    public float paddleWidth = 1.5f; 
     public LayerMask wallLayer; 
 
     private Rigidbody2D _rigidbody2D;
@@ -17,6 +18,8 @@ public class Paddle : MonoBehaviour
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         
+
+
     }
 
     void Update()
@@ -52,6 +55,12 @@ public class Paddle : MonoBehaviour
                 ballRb.AddForce(new Vector2((Mathf.Abs(difference * 200)), BallsManager.Instance.initialBallSpeed));
             }
         }
+    }
+    public void ChangePaddleSize(float sizeMultiplier)
+    {
+        Vector3 scale = transform.localScale;
+        scale.x *= sizeMultiplier;
+        transform.localScale = scale;
     }
     private void Awake()
     {

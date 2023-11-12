@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4651480328658899877}
   - component: {fileID: 91161719741237049}
   - component: {fileID: 7199194062872434466}
-  - component: {fileID: 3731577844928221058}
+  - component: {fileID: 5168581584501660819}
   m_Layer: 0
   m_Name: YellowSquare (3)
   m_TagString: YellowBrick
@@ -132,7 +132,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3731577844928221058
+--- !u!114 &5168581584501660819
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,6 +144,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678eeb531f40cb748838a0e916f56720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerUpPrefabs:
+  - {fileID: 5173412224954359729, guid: a517f71f0b4b20442a68a6836bf7ef8b, type: 3}
+  - {fileID: 128643146077353638, guid: dd9e599e087203d4b9961e34e1c48650, type: 3}
+  - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
+  - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
+  - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
 --- !u!1 &1027063961115133761
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,7 +704,7 @@ GameObject:
   - component: {fileID: 8515271283547015296}
   - component: {fileID: 4027042369521294364}
   - component: {fileID: 6145617372445477895}
-  - component: {fileID: 3024845140482499587}
+  - component: {fileID: 2755014692412433297}
   m_Layer: 0
   m_Name: YellowSquare (5)
   m_TagString: YellowBrick
@@ -819,7 +825,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3024845140482499587
+--- !u!114 &2755014692412433297
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -831,6 +837,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678eeb531f40cb748838a0e916f56720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerUpPrefabs:
+  - {fileID: 5173412224954359729, guid: a517f71f0b4b20442a68a6836bf7ef8b, type: 3}
+  - {fileID: 128643146077353638, guid: dd9e599e087203d4b9961e34e1c48650, type: 3}
+  - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
+  - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
+  - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
 --- !u!1 &4843222512830186913
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,7 +854,7 @@ GameObject:
   - component: {fileID: 681282967005496653}
   - component: {fileID: 5240739231680631249}
   - component: {fileID: 3031392393276522954}
-  - component: {fileID: 7327390970956341423}
+  - component: {fileID: 4216472991643232379}
   m_Layer: 0
   m_Name: YellowSquare (8)
   m_TagString: YellowBrick
@@ -963,7 +975,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &7327390970956341423
+--- !u!114 &4216472991643232379
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -975,6 +987,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678eeb531f40cb748838a0e916f56720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerUpPrefabs:
+  - {fileID: 5173412224954359729, guid: a517f71f0b4b20442a68a6836bf7ef8b, type: 3}
+  - {fileID: 128643146077353638, guid: dd9e599e087203d4b9961e34e1c48650, type: 3}
+  - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
+  - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
+  - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
 --- !u!1 &5168402506653553065
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,7 +1088,7 @@ GameObject:
   - component: {fileID: 2105668745149996359}
   - component: {fileID: 6698657212890008027}
   - component: {fileID: 4493777676825024960}
-  - component: {fileID: 4518076372234234759}
+  - component: {fileID: 2047204064446576795}
   m_Layer: 0
   m_Name: YellowSquare (4)
   m_TagString: YellowBrick
@@ -1191,7 +1209,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4518076372234234759
+--- !u!114 &2047204064446576795
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1203,6 +1221,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678eeb531f40cb748838a0e916f56720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerUpPrefabs:
+  - {fileID: 5173412224954359729, guid: a517f71f0b4b20442a68a6836bf7ef8b, type: 3}
+  - {fileID: 128643146077353638, guid: dd9e599e087203d4b9961e34e1c48650, type: 3}
+  - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
+  - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
+  - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
 --- !u!1 &6391573165599723632
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,7 +1238,7 @@ GameObject:
   - component: {fileID: 1365047975112708252}
   - component: {fileID: 5998548729115804672}
   - component: {fileID: 3572572260978332699}
-  - component: {fileID: 2766377443159385528}
+  - component: {fileID: 9060887748364652368}
   m_Layer: 0
   m_Name: YellowSquare (6)
   m_TagString: YellowBrick
@@ -1335,7 +1359,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2766377443159385528
+--- !u!114 &9060887748364652368
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1347,6 +1371,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678eeb531f40cb748838a0e916f56720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerUpPrefabs:
+  - {fileID: 5173412224954359729, guid: a517f71f0b4b20442a68a6836bf7ef8b, type: 3}
+  - {fileID: 128643146077353638, guid: dd9e599e087203d4b9961e34e1c48650, type: 3}
+  - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
+  - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
+  - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
 --- !u!1 &6721887499955315322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,7 +1388,7 @@ GameObject:
   - component: {fileID: 1660142821173207702}
   - component: {fileID: 6252329675307464202}
   - component: {fileID: 3778466710374524433}
-  - component: {fileID: 8677611447995539765}
+  - component: {fileID: 5372596806554761034}
   m_Layer: 0
   m_Name: YellowSquare (1)
   m_TagString: YellowBrick
@@ -1479,7 +1509,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8677611447995539765
+--- !u!114 &5372596806554761034
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1491,6 +1521,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678eeb531f40cb748838a0e916f56720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerUpPrefabs:
+  - {fileID: 5173412224954359729, guid: a517f71f0b4b20442a68a6836bf7ef8b, type: 3}
+  - {fileID: 128643146077353638, guid: dd9e599e087203d4b9961e34e1c48650, type: 3}
+  - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
+  - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
+  - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
 --- !u!1 &7736812629956046673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1502,7 +1538,7 @@ GameObject:
   - component: {fileID: 2385883129689747389}
   - component: {fileID: 6976889186454682401}
   - component: {fileID: 178332528601705274}
-  - component: {fileID: 6084063739009466254}
+  - component: {fileID: 5616155807344921585}
   m_Layer: 0
   m_Name: YellowSquare (7)
   m_TagString: YellowBrick
@@ -1623,7 +1659,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6084063739009466254
+--- !u!114 &5616155807344921585
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1635,6 +1671,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678eeb531f40cb748838a0e916f56720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerUpPrefabs:
+  - {fileID: 5173412224954359729, guid: a517f71f0b4b20442a68a6836bf7ef8b, type: 3}
+  - {fileID: 128643146077353638, guid: dd9e599e087203d4b9961e34e1c48650, type: 3}
+  - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
+  - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
+  - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
 --- !u!1 &8060819420971365886
 GameObject:
   m_ObjectHideFlags: 0
@@ -1646,7 +1688,7 @@ GameObject:
   - component: {fileID: 2710949850502493458}
   - component: {fileID: 7228705290801996174}
   - component: {fileID: 502985798470857109}
-  - component: {fileID: 8468521437714046867}
+  - component: {fileID: 8328431534839349896}
   m_Layer: 0
   m_Name: YellowSquare (2)
   m_TagString: YellowBrick
@@ -1767,7 +1809,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8468521437714046867
+--- !u!114 &8328431534839349896
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1779,6 +1821,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678eeb531f40cb748838a0e916f56720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerUpPrefabs:
+  - {fileID: 5173412224954359729, guid: a517f71f0b4b20442a68a6836bf7ef8b, type: 3}
+  - {fileID: 128643146077353638, guid: dd9e599e087203d4b9961e34e1c48650, type: 3}
+  - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
+  - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
+  - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
 --- !u!1 &8149518720903613068
 GameObject:
   m_ObjectHideFlags: 0

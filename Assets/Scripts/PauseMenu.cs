@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class PauseMenu : MonoBehaviour
 {
     public bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    public GameObject gameOverMenuUI;
+    public TextMeshProUGUI finalScoreText;
 
     private static PauseMenu _instance;
     public static PauseMenu Instance => _instance;
@@ -29,6 +33,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name != "MainMenu")
         {
+            
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 if (GameIsPaused)
@@ -41,11 +46,25 @@ public class PauseMenu : MonoBehaviour
                 }
             }
         }
+        // If we are in last level and all bricks are destroyed, game is over. 
+        if(SceneManager.GetActiveScene().name == "Level3" && BrickManager.Instance.AreAllBricksDestroyed()) { 
+            
+            gameOverMenuUI.SetActive(true);
+            UpdateFinalScoreUI();
+            ScoreManager.Instance.livesText.enabled = false;
+            ScoreManager.Instance.scoreText.enabled = false;
+        }
+        // Disable 
+        if(SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            gameOverMenuUI.SetActive(false);
+        }
     }
 
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
+        
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
@@ -55,25 +74,43 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
-    
-
-
-    
-    public void LoadMainMenu() {
-
-        Resume();
-        if (Paddle.Instance != null)
+    public void UpdateFinalScoreUI()
+    {
+        FindFinalScoreUI();
+        if (finalScoreText != null)
         {
-            Destroy(Paddle.Instance.gameObject);
+            finalScoreText.text = "Score: " + ScoreManager.Instance.score;
         }
-        GameManager.manager.IsGameStarted = false;
-        GameManager.manager.currentLevel = "Level" + 1;
-        GameManager.manager.i = 1;
-        Time.timeScale = 1f;
-        ScoreManager.Instance.score = 0;
-        ScoreManager.Instance.lives = 3;
-        
-        SceneManager.LoadScene("MainMenu");
     }
+    private void FindFinalScoreUI()
+    {
+        GameObject finalScoreTextObj = GameObject.FindGameObjectWithTag("FinalScoreText");
+        if (finalScoreTextObj != null)
+        {
+            finalScoreText = finalScoreTextObj.GetComponent<TextMeshProUGUI>();
+        }
+        else
+        {
+            Debug.LogError("Lives Text object not found");
+        }
+    }
+
+    public void LoadMainMenu() {
+        
+    Resume();
+        
+    if (Paddle.Instance != null)
+    {
+        Destroy(Paddle.Instance.gameObject);
+    }
+        
+    GameManager.manager.IsGameStarted = false;
+    GameManager.manager.currentLevel = "Level" + 1;
+    GameManager.manager.i = 1;
+    ScoreManager.Instance.score = 0;
+    ScoreManager.Instance.lives = 3;
+        
+    SceneManager.LoadScene("MainMenu");
+}
    
 }

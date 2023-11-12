@@ -9,14 +9,9 @@ public class Ball : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
     }
-    public void FreezeBall()
+    public void ChangeSpeed(float speedMultiplier)
     {
-        _rigidbody.velocity = Vector2.zero;
-        _rigidbody.isKinematic = true;
-    }
-    public void UnfreezeBall()
-    {
-        _rigidbody.isKinematic = false;
+        _rigidbody.velocity *= speedMultiplier;
     }
     public void DestroyBall(){
 

@@ -15,6 +15,8 @@ TagManager:
   - YellowBrick
   - LivesText
   - ScoreText
+  - FinalScoreText
+  - IceBrick
   layers:
   - Default
   - TransparentFX

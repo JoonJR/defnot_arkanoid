@@ -40,8 +40,6 @@ public class ScoreManager : MonoBehaviour
     public void NegateLife(int life){
         lives = Mathf.Max(lives - life, 0);
         UpdateLivesUI();
-        
-
     }
     private void UpdateLivesUI(){
         if (livesText != null)
@@ -49,7 +47,7 @@ public class ScoreManager : MonoBehaviour
             livesText.text = "Lives: " + lives;
         }
     }
-    private void UpdateScoreUI()
+    public void UpdateScoreUI()
     {
         if (scoreText != null)
         {
@@ -60,19 +58,15 @@ public class ScoreManager : MonoBehaviour
     {
         score += points;
         UpdateScoreUI();
-
-
     }
-    public void CalculateScore(int brick)
-    {
-
-    }
+    
     private void FindUIElements()
     {
         GameObject livesTextObj = GameObject.FindGameObjectWithTag("LivesText");
         if (livesTextObj != null)
         {
             livesText = livesTextObj.GetComponent<TextMeshProUGUI>();
+            
         }
         else
         {

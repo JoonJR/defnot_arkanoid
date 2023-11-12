@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8619060129816023867}
   - component: {fileID: 3532868821769658321}
   - component: {fileID: 5850382470841719310}
-  - component: {fileID: 5658956109463833502}
+  - component: {fileID: 8883823585976424822}
   m_Layer: 0
   m_Name: BlueBrick (5)
   m_TagString: BlueBrick
@@ -132,7 +132,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5658956109463833502
+--- !u!114 &8883823585976424822
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,6 +144,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678eeb531f40cb748838a0e916f56720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerUpPrefabs:
+  - {fileID: 5173412224954359729, guid: a517f71f0b4b20442a68a6836bf7ef8b, type: 3}
+  - {fileID: 128643146077353638, guid: dd9e599e087203d4b9961e34e1c48650, type: 3}
+  - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
+  - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
+  - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
 --- !u!1 &1093499841365013533
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,7 +329,7 @@ GameObject:
   - component: {fileID: 7249467975303673996}
   - component: {fileID: 2450239993688568934}
   - component: {fileID: 4771281158490059193}
-  - component: {fileID: 3086306864495943789}
+  - component: {fileID: 5586096552554566617}
   m_Layer: 0
   m_Name: BlueBrick (2)
   m_TagString: BlueBrick
@@ -444,7 +450,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3086306864495943789
+--- !u!114 &5586096552554566617
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -456,6 +462,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678eeb531f40cb748838a0e916f56720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerUpPrefabs:
+  - {fileID: 5173412224954359729, guid: a517f71f0b4b20442a68a6836bf7ef8b, type: 3}
+  - {fileID: 128643146077353638, guid: dd9e599e087203d4b9961e34e1c48650, type: 3}
+  - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
+  - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
+  - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
 --- !u!1 &2590883864636799492
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,7 +518,7 @@ GameObject:
   - component: {fileID: 6464841668789492364}
   - component: {fileID: 2246719807395190374}
   - component: {fileID: 9158647528857310137}
-  - component: {fileID: 6668395311343281725}
+  - component: {fileID: 8677251373983925600}
   m_Layer: 0
   m_Name: BlueBrick (1)
   m_TagString: BlueBrick
@@ -627,7 +639,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6668395311343281725
+--- !u!114 &8677251373983925600
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -639,6 +651,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678eeb531f40cb748838a0e916f56720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerUpPrefabs:
+  - {fileID: 5173412224954359729, guid: a517f71f0b4b20442a68a6836bf7ef8b, type: 3}
+  - {fileID: 128643146077353638, guid: dd9e599e087203d4b9961e34e1c48650, type: 3}
+  - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
+  - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
+  - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
 --- !u!1 &3453365115118760093
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,7 +752,7 @@ GameObject:
   - component: {fileID: 4925668879812492300}
   - component: {fileID: 198498423524290790}
   - component: {fileID: 7131111250027656505}
-  - component: {fileID: 9220524159679862581}
+  - component: {fileID: 2745753611676437198}
   m_Layer: 0
   m_Name: BlueBrick
   m_TagString: BlueBrick
@@ -855,7 +873,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &9220524159679862581
+--- !u!114 &2745753611676437198
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -867,6 +885,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678eeb531f40cb748838a0e916f56720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerUpPrefabs:
+  - {fileID: 5173412224954359729, guid: a517f71f0b4b20442a68a6836bf7ef8b, type: 3}
+  - {fileID: 128643146077353638, guid: dd9e599e087203d4b9961e34e1c48650, type: 3}
+  - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
+  - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
+  - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
 --- !u!1 &4389484020941986602
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,7 +986,7 @@ GameObject:
   - component: {fileID: 3779492587694558744}
   - component: {fileID: 8280215944174306034}
   - component: {fileID: 1359737589218297645}
-  - component: {fileID: 4799139314417456625}
+  - component: {fileID: 5921013054973822029}
   m_Layer: 0
   m_Name: BlueBrick (4)
   m_TagString: BlueBrick
@@ -1083,7 +1107,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4799139314417456625
+--- !u!114 &5921013054973822029
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1095,6 +1119,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678eeb531f40cb748838a0e916f56720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerUpPrefabs:
+  - {fileID: 5173412224954359729, guid: a517f71f0b4b20442a68a6836bf7ef8b, type: 3}
+  - {fileID: 128643146077353638, guid: dd9e599e087203d4b9961e34e1c48650, type: 3}
+  - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
+  - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
+  - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
 --- !u!1 &5589546839165818927
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,7 +1136,7 @@ GameObject:
   - component: {fileID: 4368555992855372377}
   - component: {fileID: 8807477896689282739}
   - component: {fileID: 1877311506376797036}
-  - component: {fileID: 6909646569947208747}
+  - component: {fileID: 6841685181679694187}
   m_Layer: 0
   m_Name: BlueBrick (7)
   m_TagString: BlueBrick
@@ -1227,7 +1257,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6909646569947208747
+--- !u!114 &6841685181679694187
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1239,6 +1269,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678eeb531f40cb748838a0e916f56720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerUpPrefabs:
+  - {fileID: 5173412224954359729, guid: a517f71f0b4b20442a68a6836bf7ef8b, type: 3}
+  - {fileID: 128643146077353638, guid: dd9e599e087203d4b9961e34e1c48650, type: 3}
+  - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
+  - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
+  - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
 --- !u!1 &5711397829817531132
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,7 +1286,7 @@ GameObject:
   - component: {fileID: 4499311167174033546}
   - component: {fileID: 8712929635107851360}
   - component: {fileID: 1791717913107925439}
-  - component: {fileID: 7905136303989339791}
+  - component: {fileID: 467769732666078387}
   m_Layer: 0
   m_Name: BlueBrick (6)
   m_TagString: BlueBrick
@@ -1371,7 +1407,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &7905136303989339791
+--- !u!114 &467769732666078387
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1383,6 +1419,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678eeb531f40cb748838a0e916f56720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerUpPrefabs:
+  - {fileID: 5173412224954359729, guid: a517f71f0b4b20442a68a6836bf7ef8b, type: 3}
+  - {fileID: 128643146077353638, guid: dd9e599e087203d4b9961e34e1c48650, type: 3}
+  - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
+  - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
+  - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
 --- !u!1 &6886888329315149056
 GameObject:
   m_ObjectHideFlags: 0
@@ -1478,7 +1520,7 @@ GameObject:
   - component: {fileID: 1505536542237945105}
   - component: {fileID: 5944458480441025019}
   - component: {fileID: 3623440414006944804}
-  - component: {fileID: 5553366994639391882}
+  - component: {fileID: 8229768419193923975}
   m_Layer: 0
   m_Name: BlueBrick (3)
   m_TagString: BlueBrick
@@ -1599,7 +1641,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5553366994639391882
+--- !u!114 &8229768419193923975
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1611,6 +1653,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678eeb531f40cb748838a0e916f56720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerUpPrefabs:
+  - {fileID: 5173412224954359729, guid: a517f71f0b4b20442a68a6836bf7ef8b, type: 3}
+  - {fileID: 128643146077353638, guid: dd9e599e087203d4b9961e34e1c48650, type: 3}
+  - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
+  - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
+  - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
 --- !u!1 &8432808175734999195
 GameObject:
   m_ObjectHideFlags: 0

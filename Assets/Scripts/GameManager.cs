@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
         //}
         if (currentSceneName == "Level1" || currentSceneName == "Level2" || currentSceneName == "Level3")
         {
-            GameState();
+            CheckLevelCompletion();
         }
         
     }
@@ -48,16 +48,19 @@ public class GameManager : MonoBehaviour
 
         
     }
-    void GameState()
+    void CheckLevelCompletion()
     {
         
         if (BrickManager.Instance.AreAllBricksDestroyed())
         {
-            i++;
-            currentLevel = "Level" + i;
-            Debug.Log(i);
-            SceneManager.LoadScene("Level" + i);
             IsGameStarted = false;
+            if (SceneManager.GetActiveScene().name != "Level3")
+            {
+                i++;
+                currentLevel = "Level" + i;
+                Debug.Log(i);
+                SceneManager.LoadScene("Level" + i);
+            }
             
         }
     }

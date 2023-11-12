@@ -7,25 +7,13 @@ public class BallsManager : MonoBehaviour
 {
     private static BallsManager _instance;
     public static BallsManager Instance => _instance;
-    
 
-
-    
     [SerializeField]
     private Ball ballPrefab;
     private Ball initialBall;
     private Rigidbody2D initialBallRb;
     public float initialBallSpeed = 250;
     public List<Ball> Balls { get; set; }
-
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -44,30 +32,29 @@ public class BallsManager : MonoBehaviour
                 initialBallRb.isKinematic = false;
                 initialBallRb.AddForce(new Vector2(0, initialBallSpeed));
                 GameManager.manager.IsGameStarted = true;
-
             }
         }
-        
-      
-        
     }
+
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
+
     private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        
         if (Paddle.Instance != null)
         {
             
             InitBall();
         }
     }
+
     public void InitBall()
     {
         Vector3 paddlePosition = Paddle.Instance.gameObject.transform.position;
@@ -79,10 +66,16 @@ public class BallsManager : MonoBehaviour
         {
             initialBall
         };
-
     }
 
-  
+    public void ChangeBallSpeed(float speedMultiplier)
+    {
+        foreach (var ball in Balls)
+        {
+            ball.ChangeSpeed(speedMultiplier);
+        }
+    }
+
     private void Awake()
     {
         if (_instance == null)
@@ -95,7 +88,5 @@ public class BallsManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
-    
     }
 }
