@@ -13,7 +13,7 @@ public class BallsManager : MonoBehaviour
     private Ball initialBall;
     private Rigidbody2D initialBallRb;
     public float initialBallSpeed = 250;
-    public List<Ball> Balls { get; set; }
+    public List<Ball> Balls { get; private set; } = new List<Ball>();
 
     // Update is called once per frame
     void Update()
@@ -55,6 +55,7 @@ public class BallsManager : MonoBehaviour
         }
     }
 
+
     public void InitBall()
     {
         Vector3 paddlePosition = Paddle.Instance.gameObject.transform.position;
@@ -62,18 +63,69 @@ public class BallsManager : MonoBehaviour
         initialBall = Instantiate(ballPrefab, startingPosition, Quaternion.identity);
         initialBallRb = initialBall.GetComponent<Rigidbody2D>();
 
-        this.Balls = new List<Ball>()
+        Balls.Add(initialBall);
+    }
+    public void RemoveBall(Ball ball)
+    {
+        Balls.Remove(ball);
+        if (Balls.Count == 0)
         {
-            initialBall
-        };
+            // No balls left in the scene
+            HandleNoBallsLeft();
+        }
+    }
+    private void HandleNoBallsLeft()
+    {
+        // Deduct a life and spawn a new initial ball
+        ScoreManager.Instance.NegateLife(1);
+        GameManager.manager.IsGameStarted = false;
+        InitBall();
+    }
+    public void DestroyAllBalls()
+    {
+        foreach (var ball in Balls)
+        {
+            if (ball != null) // Check if the ball is not already destroyed
+            {
+                Destroy(ball.gameObject); // Destroy the ball
+            }
+        }
+
+        Balls.Clear(); // Clear the list after all balls are destroyed
     }
 
     public void ChangeBallSpeed(float speedMultiplier)
     {
         foreach (var ball in Balls)
         {
-            ball.ChangeSpeed(speedMultiplier);
+            if (ball != null && ball.gameObject != null) // Check if the ball still exists
+            {
+                var ballRb = ball.GetComponent<Rigidbody2D>();
+                if (ballRb != null) // Check if the Rigidbody2D component still exists
+                {
+                    ballRb.velocity *= speedMultiplier;
+                }
+            }
         }
+    }
+    public void SpawnExtraBalls(int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            Vector3 paddlePosition = Paddle.Instance.gameObject.transform.position;
+            Vector3 ballPosition = new Vector3(paddlePosition.x, paddlePosition.y + 0.45f, 0);
+            Ball newBall = Instantiate(ballPrefab, ballPosition, Quaternion.identity);
+            Rigidbody2D rb = newBall.GetComponent<Rigidbody2D>();
+            rb.isKinematic = false;
+            rb.AddForce(GetRandomDirection() * initialBallSpeed);
+            Balls.Add(newBall);
+        }
+    }
+        private Vector2 GetRandomDirection()
+    {
+        float x = Random.Range(-1f, 1f);
+        float y = Random.Range(0.5f, 1f); // Ensuring the ball goes upwards
+        return new Vector2(x, y).normalized; // Normalize to keep the speed consistent
     }
 
     private void Awake()

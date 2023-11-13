@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 3374511301049852963}
   - component: {fileID: 2179275008965661023}
   - component: {fileID: 8247774074368276702}
-  - component: {fileID: 6239101493971842598}
+  - component: {fileID: 4141613601374041187}
   m_Layer: 0
   m_Name: GreenBrick (7)
   m_TagString: GreenBrick
@@ -300,7 +300,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6239101493971842598
+--- !u!114 &4141613601374041187
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -318,6 +318,7 @@ MonoBehaviour:
   - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
   - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
   - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
+  - {fileID: 2816964061262381344, guid: 86957a837fac41446850eb90bc8dee0c, type: 3}
 --- !u!1 &1630029209375357583
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,7 +414,7 @@ GameObject:
   - component: {fileID: 2420349316149591182}
   - component: {fileID: 1259941180702083570}
   - component: {fileID: 9022847596209578099}
-  - component: {fileID: 2357448362940022506}
+  - component: {fileID: 4913770663563419129}
   m_Layer: 0
   m_Name: GreenBrick (5)
   m_TagString: GreenBrick
@@ -534,7 +535,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2357448362940022506
+--- !u!114 &4913770663563419129
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -552,6 +553,7 @@ MonoBehaviour:
   - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
   - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
   - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
+  - {fileID: 2816964061262381344, guid: 86957a837fac41446850eb90bc8dee0c, type: 3}
 --- !u!1 &2867484902794010481
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,7 +565,7 @@ GameObject:
   - component: {fileID: 1754048081002971024}
   - component: {fileID: 2935601876990020332}
   - component: {fileID: 4969431488183968621}
-  - component: {fileID: 8062049793053803674}
+  - component: {fileID: 5306218647844013206}
   m_Layer: 0
   m_Name: GreenBrick (4)
   m_TagString: GreenBrick
@@ -684,7 +686,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8062049793053803674
+--- !u!114 &5306218647844013206
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -702,6 +704,7 @@ MonoBehaviour:
   - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
   - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
   - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
+  - {fileID: 2816964061262381344, guid: 86957a837fac41446850eb90bc8dee0c, type: 3}
 --- !u!1 &2892094854608311728
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,7 +839,7 @@ GameObject:
   - component: {fileID: 157365394002004040}
   - component: {fileID: 3658587320962727220}
   - component: {fileID: 6813458094766838965}
-  - component: {fileID: 3130301258011236571}
+  - component: {fileID: 5874404473964272566}
   m_Layer: 0
   m_Name: GreenBrick (3)
   m_TagString: GreenBrick
@@ -957,7 +960,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3130301258011236571
+--- !u!114 &5874404473964272566
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -975,6 +978,7 @@ MonoBehaviour:
   - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
   - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
   - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
+  - {fileID: 2816964061262381344, guid: 86957a837fac41446850eb90bc8dee0c, type: 3}
 --- !u!1 &4825398691207657937
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,7 +1074,7 @@ GameObject:
   - component: {fileID: 7564526218198197289}
   - component: {fileID: 6345681488520139093}
   - component: {fileID: 3772836093790959828}
-  - component: {fileID: 8569646201383588862}
+  - component: {fileID: 1104007988039263074}
   m_Layer: 0
   m_Name: GreenBrick (6)
   m_TagString: GreenBrick
@@ -1191,7 +1195,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8569646201383588862
+--- !u!114 &1104007988039263074
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1209,6 +1213,7 @@ MonoBehaviour:
   - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
   - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
   - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
+  - {fileID: 2816964061262381344, guid: 86957a837fac41446850eb90bc8dee0c, type: 3}
 --- !u!1 &6381584288350981641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1388,7 +1393,7 @@ GameObject:
   - component: {fileID: 6217033035102604054}
   - component: {fileID: 7398760726128377450}
   - component: {fileID: 785315663405340651}
-  - component: {fileID: 8153174807273083144}
+  - component: {fileID: 4641794821792479159}
   m_Layer: 0
   m_Name: GreenBrick
   m_TagString: GreenBrick
@@ -1509,7 +1514,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8153174807273083144
+--- !u!114 &4641794821792479159
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1527,6 +1532,7 @@ MonoBehaviour:
   - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
   - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
   - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
+  - {fileID: 2816964061262381344, guid: 86957a837fac41446850eb90bc8dee0c, type: 3}
 --- !u!1 &7929990468411250106
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,8 +1628,8 @@ GameObject:
   - component: {fileID: 5636518331218905650}
   - component: {fileID: 9138389383833009998}
   - component: {fileID: 1340306303288628943}
-  - component: {fileID: 1204809023889336663}
-  - component: {fileID: 5799985109097532422}
+  - component: {fileID: 33261877652608936}
+  - component: {fileID: 3667982817348114477}
   m_Layer: 0
   m_Name: GreenBrick (1)
   m_TagString: GreenBrick
@@ -1744,20 +1750,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1204809023889336663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8188692782046636755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 678eeb531f40cb748838a0e916f56720, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powerUpPrefabs: []
---- !u!114 &5799985109097532422
+--- !u!114 &33261877652608936
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1775,6 +1768,26 @@ MonoBehaviour:
   - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
   - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
   - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
+  - {fileID: 2816964061262381344, guid: 86957a837fac41446850eb90bc8dee0c, type: 3}
+--- !u!114 &3667982817348114477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8188692782046636755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 678eeb531f40cb748838a0e916f56720, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUpPrefabs:
+  - {fileID: 5173412224954359729, guid: a517f71f0b4b20442a68a6836bf7ef8b, type: 3}
+  - {fileID: 128643146077353638, guid: dd9e599e087203d4b9961e34e1c48650, type: 3}
+  - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
+  - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
+  - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
+  - {fileID: 2816964061262381344, guid: 86957a837fac41446850eb90bc8dee0c, type: 3}
 --- !u!1 &9015248495050493165
 GameObject:
   m_ObjectHideFlags: 0
@@ -1786,7 +1799,7 @@ GameObject:
   - component: {fileID: 4791939413177936908}
   - component: {fileID: 8244569970466150768}
   - component: {fileID: 2171075274753552625}
-  - component: {fileID: 3997399828084408827}
+  - component: {fileID: 924529000608233969}
   m_Layer: 0
   m_Name: GreenBrick (8)
   m_TagString: GreenBrick
@@ -1907,7 +1920,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3997399828084408827
+--- !u!114 &924529000608233969
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1925,3 +1938,4 @@ MonoBehaviour:
   - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
   - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
   - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
+  - {fileID: 2816964061262381344, guid: 86957a837fac41446850eb90bc8dee0c, type: 3}

@@ -21,6 +21,7 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         
+
     }
     private void Awake(){
         
@@ -39,6 +40,7 @@ public class ScoreManager : MonoBehaviour
     }
     public void NegateLife(int life){
         lives = Mathf.Max(lives - life, 0);
+        LivesDisplay.Instance.SetLives(lives);
         UpdateLivesUI();
     }
     private void UpdateLivesUI(){
@@ -60,7 +62,7 @@ public class ScoreManager : MonoBehaviour
         UpdateScoreUI();
     }
     
-    private void FindUIElements()
+    public void FindUIElements()
     {
         GameObject livesTextObj = GameObject.FindGameObjectWithTag("LivesText");
         if (livesTextObj != null)
@@ -81,28 +83,34 @@ public class ScoreManager : MonoBehaviour
         else
         {
             Debug.LogError("Score Text object not found");
+            
         }
     }
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-
-        if (scene.name == "Level1")
-        {
-            FindUIElements();
-            livesText.text = "Lives: 3";
-            scoreText.text = "Score: " + score;
+        if (scene.name == "MainMenu" && livesText != null) {
+            livesText.enabled = false;
+            scoreText.enabled = false;
         }
-        if (scene.name == "Level2")
+        else if(scene.name == "Level1")
+        {
+            
+            FindUIElements();
+            UpdateLivesUI();
+            UpdateScoreUI();
+        }
+        else if (scene.name == "Level2")
         {
             FindUIElements();
             UpdateLivesUI();
             UpdateScoreUI();
         }
-        if (scene.name == "Level3")
+        else if (scene.name == "Level3")
         {
             FindUIElements();
             UpdateLivesUI();
             UpdateScoreUI();
         }
+        
     }
 }

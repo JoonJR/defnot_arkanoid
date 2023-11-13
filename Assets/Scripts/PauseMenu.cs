@@ -50,21 +50,30 @@ public class PauseMenu : MonoBehaviour
         if(SceneManager.GetActiveScene().name == "Level3" && BrickManager.Instance.AreAllBricksDestroyed()) { 
             
             gameOverMenuUI.SetActive(true);
+            GameIsPaused = true;
+            pauseMenuUI.SetActive(false);
             UpdateFinalScoreUI();
             ScoreManager.Instance.livesText.enabled = false;
             ScoreManager.Instance.scoreText.enabled = false;
+        }
+        if(SceneManager.GetActiveScene().name == "Level1")
+        {
+            
+            ScoreManager.Instance.livesText.enabled = true;
+            ScoreManager.Instance.scoreText.enabled = true;
+            GameIsPaused = false;
         }
         // Disable 
         if(SceneManager.GetActiveScene().name == "MainMenu")
         {
             gameOverMenuUI.SetActive(false);
+            
         }
     }
 
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
-        
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
@@ -94,8 +103,8 @@ public class PauseMenu : MonoBehaviour
             Debug.LogError("Lives Text object not found");
         }
     }
-
-    public void LoadMainMenu() {
+    // When going to mainmenu reset everything.
+    public void LoadMainMenu() { 
         
     Resume();
         
@@ -103,7 +112,10 @@ public class PauseMenu : MonoBehaviour
     {
         Destroy(Paddle.Instance.gameObject);
     }
-        
+    pauseMenuUI.SetActive(false);
+    BallsManager.Instance.DestroyAllBalls();
+    ScoreManager.Instance.livesText.enabled = false;    
+    ScoreManager.Instance.scoreText.enabled = false;
     GameManager.manager.IsGameStarted = false;
     GameManager.manager.currentLevel = "Level" + 1;
     GameManager.manager.i = 1;
@@ -111,6 +123,6 @@ public class PauseMenu : MonoBehaviour
     ScoreManager.Instance.lives = 3;
         
     SceneManager.LoadScene("MainMenu");
-}
+    }
    
 }

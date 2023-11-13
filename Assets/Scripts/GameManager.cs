@@ -53,8 +53,9 @@ public class GameManager : MonoBehaviour
         
         if (BrickManager.Instance.AreAllBricksDestroyed())
         {
+            BallsManager.Instance.DestroyAllBalls();
             IsGameStarted = false;
-            if (SceneManager.GetActiveScene().name != "Level3")
+            if (SceneManager.GetActiveScene().name != "Level3") // Last level, now level3.
             {
                 i++;
                 currentLevel = "Level" + i;

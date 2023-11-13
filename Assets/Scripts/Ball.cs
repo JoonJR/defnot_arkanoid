@@ -1,7 +1,5 @@
 using UnityEngine;
 
-
-
 public class Ball : MonoBehaviour
 {
     private Rigidbody2D _rigidbody;
@@ -14,10 +12,10 @@ public class Ball : MonoBehaviour
         _rigidbody.velocity *= speedMultiplier;
     }
     public void DestroyBall(){
-
-        Destroy(gameObject);
-        GameManager.manager.IsGameStarted = false;
-        BallsManager.Instance.InitBall();
-
+        if (gameObject != null) {
+            Destroy(gameObject);
+            BallsManager.Instance.RemoveBall(this);
+        }
+ 
     }
 }

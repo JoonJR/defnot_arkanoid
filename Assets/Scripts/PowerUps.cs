@@ -3,8 +3,9 @@ using System.Collections;
 
 public class PowerUp : MonoBehaviour
 {
-    public enum PowerUpType { Enlarge, Shrink, ExtraLife, SlowBall, FastBall }
+    public enum PowerUpType { Enlarge, Shrink, ExtraLife, SlowBall, FastBall, ExtraBalls }
     public PowerUpType powerUpType;
+   
     public float duration = 10f; // Duration of the power-up effect
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -13,6 +14,10 @@ public class PowerUp : MonoBehaviour
         {
             StartCoroutine(ApplyPowerUp());
             Destroy(gameObject); // Destroy the power-up after applying its effect
+        }
+        if (collision.gameObject.CompareTag("DeathWall"))
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -40,13 +45,23 @@ public class PowerUp : MonoBehaviour
                 Debug.Log("SlowBall");
                 BallsManager.Instance.ChangeBallSpeed(0.5f); // Slow down
                 yield return new WaitForSeconds(duration);
-                BallsManager.Instance.ChangeBallSpeed(1.0f); // Revert to original speed
+                if (BallsManager.Instance != null)
+                {
+                    BallsManager.Instance.ChangeBallSpeed(1.0f); // Revert to original speed
+                }
                 break;
             case PowerUpType.FastBall:
                 Debug.Log("FastBall");
                 BallsManager.Instance.ChangeBallSpeed(1.5f); // Speed up
                 yield return new WaitForSeconds(duration);
-                BallsManager.Instance.ChangeBallSpeed(1.0f); // Revert to original speed
+                if (BallsManager.Instance != null)
+                {
+                    BallsManager.Instance.ChangeBallSpeed(1.0f); // Revert to original speed
+                }
+                break;
+            case PowerUpType.ExtraBalls:
+                Debug.Log("ExtraBalls");
+                BallsManager.Instance.SpawnExtraBalls(2); // Spawn two extra balls
                 break;
         }
     }

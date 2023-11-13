@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8619060129816023867}
   - component: {fileID: 3532868821769658321}
   - component: {fileID: 5850382470841719310}
-  - component: {fileID: 8883823585976424822}
+  - component: {fileID: 4111889798407762344}
   m_Layer: 0
   m_Name: BlueBrick (5)
   m_TagString: BlueBrick
@@ -132,7 +132,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8883823585976424822
+--- !u!114 &4111889798407762344
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,6 +150,7 @@ MonoBehaviour:
   - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
   - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
   - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
+  - {fileID: 2816964061262381344, guid: 86957a837fac41446850eb90bc8dee0c, type: 3}
 --- !u!1 &1093499841365013533
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,7 +330,7 @@ GameObject:
   - component: {fileID: 7249467975303673996}
   - component: {fileID: 2450239993688568934}
   - component: {fileID: 4771281158490059193}
-  - component: {fileID: 5586096552554566617}
+  - component: {fileID: 3814021142788487183}
   m_Layer: 0
   m_Name: BlueBrick (2)
   m_TagString: BlueBrick
@@ -450,7 +451,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5586096552554566617
+--- !u!114 &3814021142788487183
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -468,6 +469,7 @@ MonoBehaviour:
   - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
   - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
   - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
+  - {fileID: 2816964061262381344, guid: 86957a837fac41446850eb90bc8dee0c, type: 3}
 --- !u!1 &2590883864636799492
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,7 +520,7 @@ GameObject:
   - component: {fileID: 6464841668789492364}
   - component: {fileID: 2246719807395190374}
   - component: {fileID: 9158647528857310137}
-  - component: {fileID: 8677251373983925600}
+  - component: {fileID: 8990836735777471517}
   m_Layer: 0
   m_Name: BlueBrick (1)
   m_TagString: BlueBrick
@@ -639,7 +641,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8677251373983925600
+--- !u!114 &8990836735777471517
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -657,6 +659,7 @@ MonoBehaviour:
   - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
   - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
   - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
+  - {fileID: 2816964061262381344, guid: 86957a837fac41446850eb90bc8dee0c, type: 3}
 --- !u!1 &3453365115118760093
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,7 +755,7 @@ GameObject:
   - component: {fileID: 4925668879812492300}
   - component: {fileID: 198498423524290790}
   - component: {fileID: 7131111250027656505}
-  - component: {fileID: 2745753611676437198}
+  - component: {fileID: 5056409935631920490}
   m_Layer: 0
   m_Name: BlueBrick
   m_TagString: BlueBrick
@@ -873,7 +876,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2745753611676437198
+--- !u!114 &5056409935631920490
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -891,6 +894,7 @@ MonoBehaviour:
   - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
   - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
   - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
+  - {fileID: 2816964061262381344, guid: 86957a837fac41446850eb90bc8dee0c, type: 3}
 --- !u!1 &4389484020941986602
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,7 +990,7 @@ GameObject:
   - component: {fileID: 3779492587694558744}
   - component: {fileID: 8280215944174306034}
   - component: {fileID: 1359737589218297645}
-  - component: {fileID: 5921013054973822029}
+  - component: {fileID: 5535299177172295699}
   m_Layer: 0
   m_Name: BlueBrick (4)
   m_TagString: BlueBrick
@@ -1107,7 +1111,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5921013054973822029
+--- !u!114 &5535299177172295699
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1125,6 +1129,7 @@ MonoBehaviour:
   - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
   - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
   - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
+  - {fileID: 2816964061262381344, guid: 86957a837fac41446850eb90bc8dee0c, type: 3}
 --- !u!1 &5589546839165818927
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,7 +1141,7 @@ GameObject:
   - component: {fileID: 4368555992855372377}
   - component: {fileID: 8807477896689282739}
   - component: {fileID: 1877311506376797036}
-  - component: {fileID: 6841685181679694187}
+  - component: {fileID: 5427504355445218887}
   m_Layer: 0
   m_Name: BlueBrick (7)
   m_TagString: BlueBrick
@@ -1257,7 +1262,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6841685181679694187
+--- !u!114 &5427504355445218887
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1275,6 +1280,7 @@ MonoBehaviour:
   - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
   - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
   - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
+  - {fileID: 2816964061262381344, guid: 86957a837fac41446850eb90bc8dee0c, type: 3}
 --- !u!1 &5711397829817531132
 GameObject:
   m_ObjectHideFlags: 0
@@ -1286,7 +1292,7 @@ GameObject:
   - component: {fileID: 4499311167174033546}
   - component: {fileID: 8712929635107851360}
   - component: {fileID: 1791717913107925439}
-  - component: {fileID: 467769732666078387}
+  - component: {fileID: 2528950683627295287}
   m_Layer: 0
   m_Name: BlueBrick (6)
   m_TagString: BlueBrick
@@ -1407,7 +1413,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &467769732666078387
+--- !u!114 &2528950683627295287
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1425,6 +1431,7 @@ MonoBehaviour:
   - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
   - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
   - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
+  - {fileID: 2816964061262381344, guid: 86957a837fac41446850eb90bc8dee0c, type: 3}
 --- !u!1 &6886888329315149056
 GameObject:
   m_ObjectHideFlags: 0
@@ -1520,7 +1527,7 @@ GameObject:
   - component: {fileID: 1505536542237945105}
   - component: {fileID: 5944458480441025019}
   - component: {fileID: 3623440414006944804}
-  - component: {fileID: 8229768419193923975}
+  - component: {fileID: 5176960367514526324}
   m_Layer: 0
   m_Name: BlueBrick (3)
   m_TagString: BlueBrick
@@ -1641,7 +1648,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8229768419193923975
+--- !u!114 &5176960367514526324
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1659,6 +1666,7 @@ MonoBehaviour:
   - {fileID: 7163473581622383805, guid: 070ac30d2410c724d899d8c25a11fea8, type: 3}
   - {fileID: 4102218805655384187, guid: 30c1d4390f9a83e4c8e27c96b9cfd8a5, type: 3}
   - {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
+  - {fileID: 2816964061262381344, guid: 86957a837fac41446850eb90bc8dee0c, type: 3}
 --- !u!1 &8432808175734999195
 GameObject:
   m_ObjectHideFlags: 0
