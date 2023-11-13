@@ -415,6 +415,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2755014692412433297, guid: 41068753ed89cc54d894399f8b660335, type: 3}
+      propertyPath: powerUpPrefabs.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2755014692412433297, guid: 41068753ed89cc54d894399f8b660335, type: 3}
+      propertyPath: powerUpPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 8779787478639551774, guid: 88a0c13e0f5a7f5439f15b8643ebe818, type: 3}
     - target: {fileID: 3031392393276522954, guid: 41068753ed89cc54d894399f8b660335, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -539,3 +547,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678eeb531f40cb748838a0e916f56720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerUpPrefabs: []

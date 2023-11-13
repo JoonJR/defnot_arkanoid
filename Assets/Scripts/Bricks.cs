@@ -24,7 +24,7 @@ public class Bricks : MonoBehaviour
     }
     private void TrySpawnPowerUp()
     {
-        if (Random.Range(0, 5) == 0) // 1 in 5 chance to get PowerUp
+        if (Random.Range(0, 0) == 0) // 1 in 5 chance to get PowerUp
         {
             SpawnPowerUp();
         }

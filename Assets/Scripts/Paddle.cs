@@ -45,7 +45,7 @@ public class Paddle : MonoBehaviour
             ballRb.velocity = Vector2.zero;
 
             float difference = paddleCenter.x - hitPoint.x;
-
+            // check where the ball hit, to determine the direction.
             if (hitPoint.x < paddleCenter.x)
             {
                 ballRb.AddForce(new Vector2(-(Mathf.Abs(difference * 200)), BallsManager.Instance.initialBallSpeed));
@@ -59,7 +59,7 @@ public class Paddle : MonoBehaviour
     public void ChangePaddleSize(float sizeMultiplier)
     {
         Vector3 scale = transform.localScale;
-        scale.x *= sizeMultiplier;
+        scale.x += sizeMultiplier;
         transform.localScale = scale;
     }
     private void Awake()

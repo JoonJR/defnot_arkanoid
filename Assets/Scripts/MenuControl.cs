@@ -8,6 +8,7 @@ public class MenuControl : MonoBehaviour
     public void LoadLevel1()
     {
         SceneManager.LoadScene("Level1");
+        PauseMenu.Instance.GameIsPaused = false;
     }
   
     public void Quit()

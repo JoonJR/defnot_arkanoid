@@ -6,15 +6,19 @@ public class PowerUp : MonoBehaviour
     public enum PowerUpType { Enlarge, Shrink, ExtraLife, SlowBall, FastBall, ExtraBalls }
     public PowerUpType powerUpType;
    
-    public float duration = 10f; // Duration of the power-up effect
+    public float duration = 4f; // Duration of the power-up effect
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Paddle"))
         {
             StartCoroutine(ApplyPowerUp());
-            Destroy(gameObject); // Destroy the power-up after applying its effect
+            // Toggle collider and renderer off, because object needs to stay active till coroutine is finished
+            gameObject.GetComponent<CircleCollider2D>().enabled = false;
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+             
         }
+        // If PowerUp collides with DeathWall, destroy. 
         if (collision.gameObject.CompareTag("DeathWall"))
         {
             Destroy(gameObject);
@@ -27,15 +31,15 @@ public class PowerUp : MonoBehaviour
         {
             case PowerUpType.Enlarge:
                 Debug.Log("Enlarge");
-                Paddle.Instance.ChangePaddleSize(1.5f); // Enlarge
+                Paddle.Instance.ChangePaddleSize(+0.5f); // Enlarge
                 yield return new WaitForSeconds(duration);
-                Paddle.Instance.ChangePaddleSize(1.0f); // Revert to original size
+                Paddle.Instance.ChangePaddleSize(-0.5f); // Revert to original size
                 break;
             case PowerUpType.Shrink:
                 Debug.Log("Shrink");
-                Paddle.Instance.ChangePaddleSize(0.5f); // Shrink
+                Paddle.Instance.ChangePaddleSize(-0.5f); // Shrink
                 yield return new WaitForSeconds(duration);
-                Paddle.Instance.ChangePaddleSize(1.0f); // Revert to original size
+                Paddle.Instance.ChangePaddleSize(+0.5f); // Revert to original size
                 break;
             case PowerUpType.ExtraLife:
                 Debug.Log("ExtraLife");
@@ -43,20 +47,30 @@ public class PowerUp : MonoBehaviour
                 break;
             case PowerUpType.SlowBall:
                 Debug.Log("SlowBall");
-                BallsManager.Instance.ChangeBallSpeed(0.5f); // Slow down
-                yield return new WaitForSeconds(duration);
-                if (BallsManager.Instance != null)
+                foreach (Ball ball in BallsManager.Instance.Balls)
                 {
-                    BallsManager.Instance.ChangeBallSpeed(1.0f); // Revert to original speed
+                    // Apply the power-up effect to each ball
+                    ball.SetSpeed(4f);
+                }
+                yield return new WaitForSeconds(duration);
+                foreach (Ball ball in BallsManager.Instance.Balls)
+                {
+                    // Apply the power-up effect to each ball
+                    ball.SetSpeed(7.5f);
                 }
                 break;
             case PowerUpType.FastBall:
                 Debug.Log("FastBall");
-                BallsManager.Instance.ChangeBallSpeed(1.5f); // Speed up
-                yield return new WaitForSeconds(duration);
-                if (BallsManager.Instance != null)
+                foreach (Ball ball in BallsManager.Instance.Balls)
                 {
-                    BallsManager.Instance.ChangeBallSpeed(1.0f); // Revert to original speed
+                    // Apply the power-up effect to each ball
+                    ball.SetSpeed(10f);
+                }
+                yield return new WaitForSeconds(duration);
+                foreach (Ball ball in BallsManager.Instance.Balls)
+                {
+                    // Apply the power-up effect to each ball
+                    ball.SetSpeed(7.5f);
                 }
                 break;
             case PowerUpType.ExtraBalls:
@@ -64,6 +78,8 @@ public class PowerUp : MonoBehaviour
                 BallsManager.Instance.SpawnExtraBalls(2); // Spawn two extra balls
                 break;
         }
+        // Destroy gameObject when coroutine finished. 
+        Destroy(gameObject);
     }
 }
 

@@ -63,6 +63,7 @@ public class BallsManager : MonoBehaviour
         initialBall = Instantiate(ballPrefab, startingPosition, Quaternion.identity);
         initialBallRb = initialBall.GetComponent<Rigidbody2D>();
 
+        Balls.Clear();
         Balls.Add(initialBall);
     }
     public void RemoveBall(Ball ball)
@@ -94,20 +95,7 @@ public class BallsManager : MonoBehaviour
         Balls.Clear(); // Clear the list after all balls are destroyed
     }
 
-    public void ChangeBallSpeed(float speedMultiplier)
-    {
-        foreach (var ball in Balls)
-        {
-            if (ball != null && ball.gameObject != null) // Check if the ball still exists
-            {
-                var ballRb = ball.GetComponent<Rigidbody2D>();
-                if (ballRb != null) // Check if the Rigidbody2D component still exists
-                {
-                    ballRb.velocity *= speedMultiplier;
-                }
-            }
-        }
-    }
+    
     public void SpawnExtraBalls(int count)
     {
         for (int i = 0; i < count; i++)

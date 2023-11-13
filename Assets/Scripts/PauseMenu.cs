@@ -61,7 +61,7 @@ public class PauseMenu : MonoBehaviour
             
             ScoreManager.Instance.livesText.enabled = true;
             ScoreManager.Instance.scoreText.enabled = true;
-            GameIsPaused = false;
+            
         }
         // Disable 
         if(SceneManager.GetActiveScene().name == "MainMenu")
@@ -102,6 +102,10 @@ public class PauseMenu : MonoBehaviour
         {
             Debug.LogError("Lives Text object not found");
         }
+    }
+    public void Quit()
+    {
+        Application.Quit();
     }
     // When going to mainmenu reset everything.
     public void LoadMainMenu() { 
