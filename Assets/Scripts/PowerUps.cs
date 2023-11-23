@@ -50,13 +50,13 @@ public class PowerUp : MonoBehaviour
                 foreach (Ball ball in BallsManager.Instance.Balls)
                 {
                     // Apply the power-up effect to each ball
-                    ball.SetSpeed(4f);
+                    ball.SetSpeed(5f);
                 }
                 yield return new WaitForSeconds(duration);
                 foreach (Ball ball in BallsManager.Instance.Balls)
                 {
                     // Apply the power-up effect to each ball
-                    ball.SetSpeed(7.5f);
+                    ball.SetSpeed(10f);
                 }
                 break;
             case PowerUpType.FastBall:
@@ -64,13 +64,13 @@ public class PowerUp : MonoBehaviour
                 foreach (Ball ball in BallsManager.Instance.Balls)
                 {
                     // Apply the power-up effect to each ball
-                    ball.SetSpeed(10f);
+                    ball.SetSpeed(13f);
                 }
                 yield return new WaitForSeconds(duration);
                 foreach (Ball ball in BallsManager.Instance.Balls)
                 {
                     // Apply the power-up effect to each ball
-                    ball.SetSpeed(7.5f);
+                    ball.SetSpeed(10f);
                 }
                 break;
             case PowerUpType.ExtraBalls:

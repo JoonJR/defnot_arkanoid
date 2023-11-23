@@ -10,8 +10,10 @@ public class PauseMenu : MonoBehaviour
 {
     public bool GameIsPaused = false;
     public GameObject pauseMenuUI;
-    public GameObject gameOverMenuUI;
+    public GameObject gameWonUI;
+    public GameObject gameOverUI;
     public TextMeshProUGUI finalScoreText;
+    public TextMeshProUGUI gameOverScoreText;
 
     private static PauseMenu _instance;
     public static PauseMenu Instance => _instance;
@@ -49,7 +51,7 @@ public class PauseMenu : MonoBehaviour
         // If we are in last level and all bricks are destroyed, game is over. 
         if(SceneManager.GetActiveScene().name == "Level3" && BrickManager.Instance.AreAllBricksDestroyed()) { 
             
-            gameOverMenuUI.SetActive(true);
+            gameWonUI.SetActive(true);
             GameIsPaused = true;
             pauseMenuUI.SetActive(false);
             UpdateFinalScoreUI();
@@ -66,8 +68,18 @@ public class PauseMenu : MonoBehaviour
         // Disable 
         if(SceneManager.GetActiveScene().name == "MainMenu")
         {
-            gameOverMenuUI.SetActive(false);
-            
+            gameWonUI.SetActive(false);
+            gameOverUI.SetActive(false);
+
+        }
+        if (ScoreManager.Instance.lives == 0)
+        {
+            gameOverUI.SetActive(true);
+            pauseMenuUI.SetActive(false);
+            UpdateGameOverScoreUI();
+            GameIsPaused = true;
+            ScoreManager.Instance.livesText.enabled = false;
+            ScoreManager.Instance.scoreText.enabled = false;
         }
     }
 
@@ -100,7 +112,27 @@ public class PauseMenu : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Lives Text object not found");
+            Debug.LogError("Score Text object not found");
+        }
+    }
+    public void UpdateGameOverScoreUI()
+    {
+        FindGameOverScoreUI();
+        if (gameOverScoreText != null)
+        {
+            gameOverScoreText.text = "Score: " + ScoreManager.Instance.score;
+        }
+    }
+    private void FindGameOverScoreUI()
+    {
+        GameObject gameOverScoreTextObj = GameObject.FindGameObjectWithTag("GameOverScoreText");
+        if (gameOverScoreTextObj != null)
+        {
+            finalScoreText = gameOverScoreTextObj.GetComponent<TextMeshProUGUI>();
+        }
+        else
+        {
+            Debug.LogError("GameOver Text object not found");
         }
     }
     public void Quit()

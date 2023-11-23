@@ -35,6 +35,19 @@ public class BallsManager : MonoBehaviour
             }
         }
     }
+    private void Awake()
+    {
+        if (_instance == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            _instance = this;
+        }
+        else if (_instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+    }
 
     private void OnEnable()
     {
@@ -116,17 +129,5 @@ public class BallsManager : MonoBehaviour
         return new Vector2(x, y).normalized; // Normalize to keep the speed consistent
     }
 
-    private void Awake()
-    {
-        if (_instance == null)
-        {
-            DontDestroyOnLoad(gameObject);
-            _instance = this;
-        }
-        else if (_instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-    }
+    
 }

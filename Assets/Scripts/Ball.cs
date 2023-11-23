@@ -3,7 +3,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     private Rigidbody2D _rigidbody;
-    public float constantSpeed = 7.5f;
+    private float constantSpeed = 10f;
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();

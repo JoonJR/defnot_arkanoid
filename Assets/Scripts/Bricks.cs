@@ -24,15 +24,22 @@ public class Bricks : MonoBehaviour
     }
     private void TrySpawnPowerUp()
     {
-        if (Random.Range(0, 0) == 0) // 1 in 5 chance to get PowerUp
+        if (Random.Range(0, 5) == 0) // 1 in 5 chance to get PowerUp
         {
             SpawnPowerUp();
         }
     }
     private void SpawnPowerUp()
     {
-        int powerUpIndex = Random.Range(0, powerUpPrefabs.Length); // Spawn random PowerUp
-        Instantiate(powerUpPrefabs[powerUpIndex], transform.position, Quaternion.identity);
+        if (powerUpPrefabs.Length > 0)
+        {
+            int powerUpIndex = Random.Range(0, powerUpPrefabs.Length); // Spawn random PowerUp
+            Instantiate(powerUpPrefabs[powerUpIndex], transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Debug.LogWarning("PowerUp prefabs array is empty!");
+        }
     }
     private void OnDestroy()
     {

@@ -17,14 +17,24 @@ public class Paddle : MonoBehaviour
     void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        
-
-
     }
 
     void Update()
     {
         HandlePaddleMovement();
+    }
+    private void Awake()
+    {
+        if (_instance == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            _instance = this;
+        }
+        else if (_instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
     }
 
     private void HandlePaddleMovement()
@@ -34,6 +44,7 @@ public class Paddle : MonoBehaviour
         Vector2 moveDirection = new Vector2(horizontalInput, 0);
         _rigidbody2D.velocity = moveDirection * moveSpeed;
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ball")
@@ -56,23 +67,13 @@ public class Paddle : MonoBehaviour
             }
         }
     }
+
     public void ChangePaddleSize(float sizeMultiplier)
     {
         Vector3 scale = transform.localScale;
         scale.x += sizeMultiplier;
         transform.localScale = scale;
     }
-    private void Awake()
-    {
-        if (_instance == null)
-        {
-            DontDestroyOnLoad(gameObject);
-            _instance = this;
-        }
-        else if (_instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-    }
+
+    
 }
