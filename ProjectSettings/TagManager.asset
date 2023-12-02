@@ -18,6 +18,8 @@ TagManager:
   - FinalScoreText
   - IceBrick
   - GameOverScoreText
+  - MusicSlider
+  - SFXSlider
   layers:
   - Default
   - TransparentFX

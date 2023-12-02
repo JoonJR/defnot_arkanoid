@@ -74,6 +74,4 @@ public class Paddle : MonoBehaviour
         scale.x += sizeMultiplier;
         transform.localScale = scale;
     }
-
-    
 }

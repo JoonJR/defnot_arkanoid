@@ -10,27 +10,15 @@ public class GameManager : MonoBehaviour
     public string currentLevel = "Level" + 1;
     public int i = 1;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
-        //if (Input.GetKeyDown(KeyCode.Escape))
-        //{
-        //    SceneManager.LoadScene("PauseMenu");
-        //    Cursor.visible = true;
-        //    Cursor.lockState = CursorLockMode.None;
-        //}
-        if (currentSceneName == "Level1" || currentSceneName == "Level2" || currentSceneName == "Level3")
+        
+        if (currentSceneName == "Level1" || currentSceneName == "Level2" || currentSceneName == "Level3" || currentSceneName == "Level4")
         {
             CheckLevelCompletion();
         }
-        
     }
     
     private void Awake()
@@ -45,17 +33,14 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
-        
     }
     void CheckLevelCompletion()
     {
-        
         if (BrickManager.Instance.AreAllBricksDestroyed())
         {
             BallsManager.Instance.DestroyAllBalls();
             IsGameStarted = false;
-            if (SceneManager.GetActiveScene().name != "Level3") // Last level, now level3.
+            if (SceneManager.GetActiveScene().name != "Level4") // Last level.
             {
                 i++;
                 currentLevel = "Level" + i;

@@ -5,6 +5,7 @@ public class PowerUp : MonoBehaviour
 {
     public enum PowerUpType { Enlarge, Shrink, ExtraLife, SlowBall, FastBall, ExtraBalls }
     public PowerUpType powerUpType;
+    public AudioClip PowerUpClip;
    
     public float duration = 4f; // Duration of the power-up effect
 
@@ -12,6 +13,7 @@ public class PowerUp : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Paddle"))
         {
+            AudioManager.Instance.PlayEffect(PowerUpClip);
             StartCoroutine(ApplyPowerUp());
             // Toggle collider and renderer off, because object needs to stay active till coroutine is finished
             gameObject.GetComponent<CircleCollider2D>().enabled = false;
@@ -42,8 +44,11 @@ public class PowerUp : MonoBehaviour
                 Paddle.Instance.ChangePaddleSize(+0.5f); // Revert to original size
                 break;
             case PowerUpType.ExtraLife:
-                Debug.Log("ExtraLife");
-                ScoreManager.Instance.NegateLife(-1); // Increase life
+                if (ScoreManager.Instance.lives != 6) // if not max lives
+                {
+                    Debug.Log("ExtraLife");
+                    ScoreManager.Instance.NegateLife(-1); // Increase life
+                }
                 break;
             case PowerUpType.SlowBall:
                 Debug.Log("SlowBall");
@@ -81,5 +86,6 @@ public class PowerUp : MonoBehaviour
         // Destroy gameObject when coroutine finished. 
         Destroy(gameObject);
     }
+    
 }
 

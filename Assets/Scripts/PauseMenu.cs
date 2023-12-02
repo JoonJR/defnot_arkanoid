@@ -49,19 +49,15 @@ public class PauseMenu : MonoBehaviour
             }
         }
         // If we are in last level and all bricks are destroyed, game is over. 
-        if(SceneManager.GetActiveScene().name == "Level3" && BrickManager.Instance.AreAllBricksDestroyed()) { 
-            
+        if(SceneManager.GetActiveScene().name == "Level4" && BrickManager.Instance.AreAllBricksDestroyed()) { 
             gameWonUI.SetActive(true);
             GameIsPaused = true;
             pauseMenuUI.SetActive(false);
             UpdateFinalScoreUI();
-            ScoreManager.Instance.livesText.enabled = false;
             ScoreManager.Instance.scoreText.enabled = false;
         }
         if(SceneManager.GetActiveScene().name == "Level1")
         {
-            
-            ScoreManager.Instance.livesText.enabled = true;
             ScoreManager.Instance.scoreText.enabled = true;
             
         }
@@ -78,7 +74,6 @@ public class PauseMenu : MonoBehaviour
             pauseMenuUI.SetActive(false);
             UpdateGameOverScoreUI();
             GameIsPaused = true;
-            ScoreManager.Instance.livesText.enabled = false;
             ScoreManager.Instance.scoreText.enabled = false;
         }
     }
@@ -150,7 +145,7 @@ public class PauseMenu : MonoBehaviour
     }
     pauseMenuUI.SetActive(false);
     BallsManager.Instance.DestroyAllBalls();
-    ScoreManager.Instance.livesText.enabled = false;    
+      
     ScoreManager.Instance.scoreText.enabled = false;
     GameManager.manager.IsGameStarted = false;
     GameManager.manager.currentLevel = "Level" + 1;

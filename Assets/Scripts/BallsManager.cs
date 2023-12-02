@@ -63,11 +63,9 @@ public class BallsManager : MonoBehaviour
     {
         if (Paddle.Instance != null)
         {
-            
             InitBall();
         }
     }
-
 
     public void InitBall()
     {

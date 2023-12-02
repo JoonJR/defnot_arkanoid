@@ -7,21 +7,16 @@ using UnityEngine.SceneManagement;
 public class Bricks : MonoBehaviour
 {
     public GameObject[] powerUpPrefabs;
-    private int silverBrickHealth = 3;
-    private int iceBrickHealth = 5;
+    public AudioClip normalHitSound;
+    private int silverBrickHealth = 2;
+    private int iceBrickHealth = 3;
 
     // Start is called before the first frame update
     void Start()
     {
         BrickManager.Instance.RegisterBrick(this);
-        
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-      
-    }
     private void TrySpawnPowerUp()
     {
         if (Random.Range(0, 5) == 0) // 1 in 5 chance to get PowerUp
@@ -51,24 +46,28 @@ public class Bricks : MonoBehaviour
         {
             if (this.gameObject.tag == "YellowBrick") // 10 points
             {
+                AudioManager.Instance.PlayEffect(normalHitSound);
                 Destroy(gameObject);
                 TrySpawnPowerUp();
                 ScoreManager.Instance.ApplyScore(10);
             }
             else if(this.gameObject.tag == "GreenBrick") // 20 points
             {
+                AudioManager.Instance.PlayEffect(normalHitSound);
                 Destroy(gameObject);
                 TrySpawnPowerUp();
                 ScoreManager.Instance.ApplyScore(20);
             }
             else if (this.gameObject.tag == "BlueBrick") // 30 points
             {
+                AudioManager.Instance.PlayEffect(normalHitSound);
                 Destroy(gameObject);
                 TrySpawnPowerUp();
                 ScoreManager.Instance.ApplyScore(30);
             }
             else if (this.gameObject.tag == "RedBrick") // 40 points
             {
+                AudioManager.Instance.PlayEffect(normalHitSound);
                 Destroy(gameObject);
                 TrySpawnPowerUp();
                 ScoreManager.Instance.ApplyScore(40);
@@ -86,6 +85,7 @@ public class Bricks : MonoBehaviour
             }
             else if (this.gameObject.tag == "IceBrick") // 100 points
             {
+                AudioManager.Instance.PlayEffect(normalHitSound);
                 iceBrickHealth -= 1;
                 if (iceBrickHealth == 0)
                 {
@@ -97,4 +97,5 @@ public class Bricks : MonoBehaviour
         }
 
     }
+    
 }

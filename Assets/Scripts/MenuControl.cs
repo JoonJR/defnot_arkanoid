@@ -10,11 +10,22 @@ public class MenuControl : MonoBehaviour
         SceneManager.LoadScene("Level1");
         PauseMenu.Instance.GameIsPaused = false;
     }
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+        PauseMenu.Instance.GameIsPaused=true;
+    }
+    public void LoadSettings()
+    {
+        SceneManager.LoadScene("Settings");
+        PauseMenu.Instance.GameIsPaused = true;
+    }
   
     public void Quit()
     {
         Application.Quit();
     }
+  
 }
 
  

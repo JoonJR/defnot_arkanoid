@@ -11,14 +11,13 @@ public class LivesDisplay : MonoBehaviour
     public Sprite fullHeart;
     public Sprite emptyHeart;
     
-
     void Start()
     {
         UpdateHeartDisplay();
     }
     private void Update()
     {
-        if (SceneManager.GetActiveScene().name == "MainMenu")
+        if (SceneManager.GetActiveScene().name == "MainMenu" || SceneManager.GetActiveScene().name == "Settings")
         {
             SetHeartsActive(false);
         }
@@ -29,9 +28,6 @@ public class LivesDisplay : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Level1")
         {
             UpdateHeartDisplay();
-           
-            
-
         }
     }
     private void Awake()

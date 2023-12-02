@@ -8,14 +8,12 @@ public class ScoreManager : MonoBehaviour
     private static ScoreManager _instance;
     public static ScoreManager Instance => _instance;
 
-   
-    public TextMeshProUGUI livesText, scoreText;
+    public TextMeshProUGUI scoreText;
     public int lives = 3;
     public int score = 0;
     
     private void Awake(){
-        
-     
+
         if (_instance == null)
         {
             DontDestroyOnLoad(gameObject);
@@ -30,15 +28,8 @@ public class ScoreManager : MonoBehaviour
     }
     public void NegateLife(int life){
         lives = Mathf.Max(lives - life, 0);
-        LivesDisplay.Instance.SetLives(lives);
-        UpdateLivesUI();
-    }
-    private void UpdateLivesUI(){
-        if (livesText != null)
-        {
-            livesText.text = "Lives: " + lives;
-        }
-    }
+        LivesDisplay.Instance.SetLives(lives);    }
+    
     public void UpdateScoreUI()
     {
         if (scoreText != null)
@@ -54,17 +45,6 @@ public class ScoreManager : MonoBehaviour
     
     public void FindUIElements()
     {
-        GameObject livesTextObj = GameObject.FindGameObjectWithTag("LivesText");
-        if (livesTextObj != null)
-        {
-            livesText = livesTextObj.GetComponent<TextMeshProUGUI>();
-            
-        }
-        else
-        {
-            Debug.LogError("Lives Text object not found");
-        }
-
         GameObject scoreTextObj = GameObject.FindGameObjectWithTag("ScoreText");
         if (scoreTextObj != null)
         {
@@ -73,34 +53,33 @@ public class ScoreManager : MonoBehaviour
         else
         {
             Debug.LogError("Score Text object not found");
-            
         }
     }
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "MainMenu" && livesText != null) {
-            livesText.enabled = false;
+        if (scene.name == "MainMenu" && scoreText != null) {
             scoreText.enabled = false;
         }
         else if(scene.name == "Level1")
         {
-            
             FindUIElements();
-            UpdateLivesUI();
             UpdateScoreUI();
         }
         else if (scene.name == "Level2")
         {
             FindUIElements();
-            UpdateLivesUI();
             UpdateScoreUI();
         }
         else if (scene.name == "Level3")
         {
             FindUIElements();
-            UpdateLivesUI();
             UpdateScoreUI();
         }
-        
+        else if (scene.name == "Level4")
+        {
+            FindUIElements();
+            UpdateScoreUI();
+        }
+
     }
 }
