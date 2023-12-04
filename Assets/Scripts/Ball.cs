@@ -4,11 +4,31 @@ public class Ball : MonoBehaviour
 {
     private Rigidbody2D _rigidbody;
     private float constantSpeed = 10f;
+    private void Start()
+    {
+        AdjustSpeedBasedOnDifficulty();
+    }
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
     }
-   
+    void AdjustSpeedBasedOnDifficulty()
+    {
+        float difficultyMultiplier = 1f;
+        switch (GameManager.CurrentDifficulty)
+        {
+            case DifficultyLevel.Easy:
+                difficultyMultiplier = 0.8f;
+                break;
+            case DifficultyLevel.Normal:
+                difficultyMultiplier = 1f;
+                break;
+            case DifficultyLevel.Hard:
+                difficultyMultiplier = 1.2f;
+                break;
+        }
+        SetSpeed(constantSpeed * difficultyMultiplier);
+    }
     // Used by PowerUps
     public void SetSpeed(float newSpeed)
     {

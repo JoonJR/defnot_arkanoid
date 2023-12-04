@@ -74,6 +74,7 @@ public class Bricks : MonoBehaviour
             }
             else if(this.gameObject.tag == "SilverBrick") // 50 points
             {
+                AudioManager.Instance.PlayEffect(normalHitSound);
                 silverBrickHealth -= 1;
 
                 if (silverBrickHealth == 0)

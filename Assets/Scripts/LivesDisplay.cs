@@ -17,7 +17,7 @@ public class LivesDisplay : MonoBehaviour
     }
     private void Update()
     {
-        if (SceneManager.GetActiveScene().name == "MainMenu" || SceneManager.GetActiveScene().name == "Settings")
+        if (SceneManager.GetActiveScene().name == "MainMenu" || SceneManager.GetActiveScene().name == "Settings" || SceneManager.GetActiveScene().name == "Difficulty" || SceneManager.GetActiveScene().name == "Nickname" || SceneManager.GetActiveScene().name == "HiScores")
         {
             SetHeartsActive(false);
         }
@@ -65,7 +65,6 @@ public class LivesDisplay : MonoBehaviour
         }
     }
 
-    // Call this method when lives change
     public void SetLives(int newLives)
     {
         ScoreManager.Instance.lives = newLives;

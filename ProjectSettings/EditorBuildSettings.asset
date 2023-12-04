@@ -15,6 +15,15 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: fe619f7e70285ce40a7899db0ee4e691
   - enabled: 1
+    path: Assets/Scenes/Difficulty.unity
+    guid: 125d310642aeab2448537fbd4e14edec
+  - enabled: 1
+    path: Assets/Scenes/HiScores.unity
+    guid: b9e6d7c6943ef404280d4f0397be9797
+  - enabled: 1
+    path: Assets/Scenes/Nickname.unity
+    guid: 980b12f35f2081e47932c90f5ce808b5
+  - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1

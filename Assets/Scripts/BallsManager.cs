@@ -77,6 +77,32 @@ public class BallsManager : MonoBehaviour
         Balls.Clear();
         Balls.Add(initialBall);
     }
+    public void ChangeBallSpeed(float newSpeed)
+    {
+        foreach (Ball ball in Balls)
+        {
+            ball.SetSpeed(newSpeed);
+        }
+    }
+    public float GetOriginalBallSpeed()
+    {
+        float baseSpeed = 10f; // Base speed
+        float difficultyMultiplier = 1f;
+        switch (GameManager.CurrentDifficulty)
+        {
+            case DifficultyLevel.Easy:
+                difficultyMultiplier = 0.8f;
+                break;
+            case DifficultyLevel.Normal:
+                difficultyMultiplier = 1f;
+                break;
+            case DifficultyLevel.Hard:
+                difficultyMultiplier = 1.2f;
+                break;
+        }
+        return baseSpeed * difficultyMultiplier;
+    }
+
     public void RemoveBall(Ball ball)
     {
         Balls.Remove(ball);

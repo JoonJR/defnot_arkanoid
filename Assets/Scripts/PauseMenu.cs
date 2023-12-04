@@ -15,6 +15,9 @@ public class PauseMenu : MonoBehaviour
     public TextMeshProUGUI finalScoreText;
     public TextMeshProUGUI gameOverScoreText;
 
+    private bool highScoreAdded = false; // Flag to track if high score has been added
+    public HighScoreManager highScoreManager;
+
     private static PauseMenu _instance;
     public static PauseMenu Instance => _instance;
     private void Awake()
@@ -33,7 +36,7 @@ public class PauseMenu : MonoBehaviour
         // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name != "MainMenu")
+        if (SceneManager.GetActiveScene().name != "MainMenu" & SceneManager.GetActiveScene().name != "Settings" & SceneManager.GetActiveScene().name != "Difficulty")
         {
             
             if (Input.GetKeyDown(KeyCode.Escape))
@@ -49,7 +52,10 @@ public class PauseMenu : MonoBehaviour
             }
         }
         // If we are in last level and all bricks are destroyed, game is over. 
-        if(SceneManager.GetActiveScene().name == "Level4" && BrickManager.Instance.AreAllBricksDestroyed()) { 
+        if(SceneManager.GetActiveScene().name == "Level4" && BrickManager.Instance.AreAllBricksDestroyed() && !highScoreAdded) {
+            int finalScore = ScoreManager.Instance.score;
+            HighScoreManager.Instance.AddHighScore(finalScore);
+            highScoreAdded = true;
             gameWonUI.SetActive(true);
             GameIsPaused = true;
             pauseMenuUI.SetActive(false);
@@ -64,12 +70,16 @@ public class PauseMenu : MonoBehaviour
         // Disable 
         if(SceneManager.GetActiveScene().name == "MainMenu")
         {
+            highScoreAdded = false;
             gameWonUI.SetActive(false);
             gameOverUI.SetActive(false);
 
         }
-        if (ScoreManager.Instance.lives == 0)
+        if (ScoreManager.Instance.lives == 0 && !highScoreAdded)
         {
+            int finalScore = ScoreManager.Instance.score;
+            HighScoreManager.Instance.AddHighScore(finalScore);
+            highScoreAdded = true;
             gameOverUI.SetActive(true);
             pauseMenuUI.SetActive(false);
             UpdateGameOverScoreUI();

@@ -29,20 +29,19 @@ public class PowerUp : MonoBehaviour
 
     private IEnumerator ApplyPowerUp()
     {
+        float originalSpeed = BallsManager.Instance.GetOriginalBallSpeed(); // Get the base speed before power-up
         switch (powerUpType)
         {
             case PowerUpType.Enlarge:
                 Debug.Log("Enlarge");
-                Paddle.Instance.ChangePaddleSize(+0.5f); // Enlarge
-                yield return new WaitForSeconds(duration);
-                Paddle.Instance.ChangePaddleSize(-0.5f); // Revert to original size
+                Paddle.Instance.TemporarilyChangePaddleSize(1.2f, duration); // Temporarily enlarge
                 break;
+
             case PowerUpType.Shrink:
                 Debug.Log("Shrink");
-                Paddle.Instance.ChangePaddleSize(-0.5f); // Shrink
-                yield return new WaitForSeconds(duration);
-                Paddle.Instance.ChangePaddleSize(+0.5f); // Revert to original size
+                Paddle.Instance.TemporarilyChangePaddleSize(0.8f, duration); // Temporarily enlarge
                 break;
+
             case PowerUpType.ExtraLife:
                 if (ScoreManager.Instance.lives != 6) // if not max lives
                 {
@@ -50,34 +49,22 @@ public class PowerUp : MonoBehaviour
                     ScoreManager.Instance.NegateLife(-1); // Increase life
                 }
                 break;
+
             case PowerUpType.SlowBall:
                 Debug.Log("SlowBall");
-                foreach (Ball ball in BallsManager.Instance.Balls)
-                {
-                    // Apply the power-up effect to each ball
-                    ball.SetSpeed(5f);
-                }
+                Debug.Log("SlowBall");
+                BallsManager.Instance.ChangeBallSpeed(originalSpeed * 0.5f); // Slow down to 50% of original speed
                 yield return new WaitForSeconds(duration);
-                foreach (Ball ball in BallsManager.Instance.Balls)
-                {
-                    // Apply the power-up effect to each ball
-                    ball.SetSpeed(10f);
-                }
+                BallsManager.Instance.ChangeBallSpeed(originalSpeed); // Revert to original speed
                 break;
+
             case PowerUpType.FastBall:
                 Debug.Log("FastBall");
-                foreach (Ball ball in BallsManager.Instance.Balls)
-                {
-                    // Apply the power-up effect to each ball
-                    ball.SetSpeed(13f);
-                }
+                BallsManager.Instance.ChangeBallSpeed(originalSpeed * 1.5f); // Speed up to 150% of original speed
                 yield return new WaitForSeconds(duration);
-                foreach (Ball ball in BallsManager.Instance.Balls)
-                {
-                    // Apply the power-up effect to each ball
-                    ball.SetSpeed(10f);
-                }
+                BallsManager.Instance.ChangeBallSpeed(originalSpeed); // Revert to original speed
                 break;
+
             case PowerUpType.ExtraBalls:
                 Debug.Log("ExtraBalls");
                 BallsManager.Instance.SpawnExtraBalls(2); // Spawn two extra balls

@@ -3,12 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum DifficultyLevel
+{
+    Easy,
+    Normal,
+    Hard
+}
+
 public class GameManager : MonoBehaviour
 {
+
     public static GameManager manager;
+    
+    public static DifficultyLevel CurrentDifficulty { get; set; } = DifficultyLevel.Normal; // Default difficulty
+
     public bool IsGameStarted { get; set; }
     public string currentLevel = "Level" + 1;
     public int i = 1;
+
+    
 
     // Update is called once per frame
     void Update()
@@ -33,6 +46,10 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+    }
+    public void SetDifficulty(DifficultyLevel difficulty)
+    {
+        CurrentDifficulty = difficulty;
     }
     void CheckLevelCompletion()
     {

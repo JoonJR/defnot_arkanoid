@@ -42,7 +42,7 @@ public class AudioManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         // Play the appropriate music based on the scene
-        if (scene.name == "MainMenu" || scene.name == "Settings")
+        if (scene.name == "MainMenu" || scene.name == "Settings" || scene.name == "Difficulty" || scene.name == "Nickname" || scene.name == "HiScores")
         {
             
             PlayMusic(mainmenuMusic, true);
@@ -52,28 +52,12 @@ public class AudioManager : MonoBehaviour
             }
             
         }
-        else if (scene.name != "MainMenu" || scene.name != "Settings") 
+        else if (scene.name != "MainMenu" || scene.name != "Settings" || scene.name != "Difficulty" || scene.name != "Nickname" || scene.name != "HiScores") 
         {
             PlayMusic(gameMusic, false);
         }
     }
-    /*private void SetupSliders()
-    {
-        Slider musicVolumeSlider = GameObject.FindWithTag("MusicSlider").GetComponent<Slider>();
-        Slider sfxVolumeSlider = GameObject.FindWithTag("SFXSlider").GetComponent<Slider>();
-
-        if (musicVolumeSlider != null)
-        {
-            musicVolumeSlider.value = musicAudioSource.volume;
-            musicVolumeSlider.onValueChanged.AddListener(SetMusicVolume);
-        }
-
-        if (sfxVolumeSlider != null)
-        {
-            sfxVolumeSlider.value = sfxAudioSource.volume;
-            sfxVolumeSlider.onValueChanged.AddListener(SetSFXVolume);
-        }
-    }*/
+   
     public void PlayMusic(AudioClip clip, bool loop)
     {
         // Check if the new clip is different from the currently playing clip

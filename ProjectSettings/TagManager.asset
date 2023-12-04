@@ -20,6 +20,9 @@ TagManager:
   - GameOverScoreText
   - MusicSlider
   - SFXSlider
+  - HighScoreText
+  - HighScoreName
+  - HighScoreValue
   layers:
   - Default
   - TransparentFX
