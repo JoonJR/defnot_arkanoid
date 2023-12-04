@@ -27,6 +27,7 @@ public class HighScoreManager : MonoBehaviour
 
     private void Awake()
     {
+        
         if (_instance == null)
         {
             
@@ -80,21 +81,37 @@ public class HighScoreManager : MonoBehaviour
 
     private void UpdateHighScoreUI()
     {
-        TextMeshProUGUI[] highScoreTexts = GameObject.FindGameObjectsWithTag("HighScoreText")
-                                                 .Select(obj => obj.GetComponent<TextMeshProUGUI>())
+        TextMeshProUGUI[] nameTexts = GameObject.FindGameObjectsWithTag("HighScoreName")
+                                                .OrderBy(go => go.name)
+                                                .Select(go => go.GetComponent<TextMeshProUGUI>())
+                                                .ToArray();
+        TextMeshProUGUI[] scoreTexts = GameObject.FindGameObjectsWithTag("HighScoreValue")
+                                                 .OrderBy(go => go.name)
+                                                 .Select(go => go.GetComponent<TextMeshProUGUI>())
                                                  .ToArray();
 
         for (int i = 0; i < highScores.Length; i++)
         {
-            if (i < highScoreTexts.Length)
+            if (highScores[i] != null)
             {
-                if (highScores[i] != null)
+                if (i < nameTexts.Length)
                 {
-                    highScoreTexts[i].text = $"{i + 1}. {highScores[i].playerName}  {highScores[i].score} ({highScores[i].difficulty})";
+                    nameTexts[i].text = $"{i + 1}. {highScores[i].playerName}";
                 }
-                else
+                if (i < scoreTexts.Length)
                 {
-                    highScoreTexts[i].text = $"{i + 1}. ---";
+                    scoreTexts[i].text = $"{highScores[i].score} ({highScores[i].difficulty})";
+                }
+            }
+            else
+            {
+                if (i < nameTexts.Length)
+                {
+                    nameTexts[i].text = $"{i + 1}. ----------";
+                }
+                if (i < scoreTexts.Length)
+                {
+                    scoreTexts[i].text = "---";
                 }
             }
         }
