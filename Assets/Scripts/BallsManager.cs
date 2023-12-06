@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,6 +14,7 @@ public class BallsManager : MonoBehaviour
     private Ball initialBall;
     private Rigidbody2D initialBallRb;
     public float initialBallSpeed = 250;
+    public bool isInPlay = false;
     public List<Ball> Balls { get; private set; } = new List<Ball>();
 
     // Update is called once per frame
@@ -27,11 +29,16 @@ public class BallsManager : MonoBehaviour
             {
                 initialBall.transform.position = ballPosition;
             }
-            if (Input.GetMouseButtonDown(0) && !PauseMenu.Instance.GameIsPaused)
+            if (Input.GetMouseButtonDown(0) || Input.GetKey(KeyCode.Space) && !PauseMenu.Instance.GameIsPaused)
             {
-                initialBallRb.isKinematic = false;
-                initialBallRb.AddForce(new Vector2(0, initialBallSpeed));
-                GameManager.manager.IsGameStarted = true;
+                if (initialBall != null)
+                {
+                    isInPlay = true;
+                    initialBallRb.isKinematic = false;
+                    initialBallRb.AddForce(new Vector2(0, initialBallSpeed));
+                    GameManager.manager.IsGameStarted = true;
+                }
+                
             }
         }
     }

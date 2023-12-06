@@ -11,10 +11,20 @@ public class Bricks : MonoBehaviour
     private int silverBrickHealth = 2;
     private int iceBrickHealth = 3;
 
+    private Animator animator;
+
+
     // Start is called before the first frame update
     void Start()
     {
         BrickManager.Instance.RegisterBrick(this);
+    }
+    void Update()
+    {
+        if (SceneManager.GetActiveScene().name == "Level3" || SceneManager.GetActiveScene().name == "Level4")
+        {
+            animator = GetComponent<Animator>();
+        }
     }
 
     private void TrySpawnPowerUp()
@@ -74,6 +84,7 @@ public class Bricks : MonoBehaviour
             }
             else if(this.gameObject.tag == "SilverBrick") // 50 points
             {
+                animator.SetTrigger("silverTrigger");
                 AudioManager.Instance.PlayEffect(normalHitSound);
                 silverBrickHealth -= 1;
 
@@ -86,6 +97,7 @@ public class Bricks : MonoBehaviour
             }
             else if (this.gameObject.tag == "IceBrick") // 100 points
             {
+                animator.SetTrigger("iceTrigger");
                 AudioManager.Instance.PlayEffect(normalHitSound);
                 iceBrickHealth -= 1;
                 if (iceBrickHealth == 0)

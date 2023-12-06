@@ -23,6 +23,7 @@ TagManager:
   - HighScoreText
   - HighScoreName
   - HighScoreValue
+  - HearthPanel
   layers:
   - Default
   - TransparentFX

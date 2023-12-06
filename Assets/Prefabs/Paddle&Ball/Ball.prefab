@@ -28,13 +28,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5330509397756100905}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.003275526, y: -0, z: -0, w: 0.99999464}
+  m_LocalRotation: {x: -0.0032755218, y: -0.0000053045874, z: 0.0016194525, w: 0.9999934}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -0.375, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.375, y: -0.001, z: 0.186}
 --- !u!212 &4670108318719784188
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 1071865613
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f579220b1432e0c409878f7cc3465d0f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 753818431cc0afb4d8e26cf7c869498f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -161,3 +161,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb6c0cf158e87941a2df070227251cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wallHit: {fileID: 8300000, guid: b9aa730e54c05d04aba5d52dce308b2a, type: 3}
+  paddleHit: {fileID: 8300000, guid: 859b181ae926f864387170324d9a5a47, type: 3}

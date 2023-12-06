@@ -4,6 +4,8 @@ public class Ball : MonoBehaviour
 {
     private Rigidbody2D _rigidbody;
     private float constantSpeed = 10f;
+    public AudioClip wallHit;
+
     private void Start()
     {
         AdjustSpeedBasedOnDifficulty();
@@ -45,6 +47,14 @@ public class Ball : MonoBehaviour
             Destroy(gameObject);
             BallsManager.Instance.RemoveBall(this);
         }
- 
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Wall")
+        {
+            AudioManager.Instance.PlayEffect(wallHit);
+        }
+        
     }
 }
+

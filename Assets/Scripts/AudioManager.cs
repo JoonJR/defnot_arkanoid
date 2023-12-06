@@ -36,8 +36,8 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         // Load saved volume settings or use default values
-        musicAudioSource.volume = PlayerPrefs.GetFloat(MusicVolumeKey, 0.5f); // Default to 0.5 if not set
-        sfxAudioSource.volume = PlayerPrefs.GetFloat(SFXVolumeKey, 0.5f); // Default to 0.5 if not set
+        musicAudioSource.volume = PlayerPrefs.GetFloat(MusicVolumeKey, 0.5f);
+        sfxAudioSource.volume = PlayerPrefs.GetFloat(SFXVolumeKey, 0.5f); 
     }
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
@@ -46,15 +46,12 @@ public class AudioManager : MonoBehaviour
         {
             
             PlayMusic(mainmenuMusic, true);
-            if (scene.name == "Settings")
-            {
-                //SetupSliders();
-            }
+            
             
         }
         else if (scene.name != "MainMenu" || scene.name != "Settings" || scene.name != "Difficulty" || scene.name != "Nickname" || scene.name != "HiScores") 
         {
-            PlayMusic(gameMusic, false);
+            PlayMusic(gameMusic, true);
         }
     }
    

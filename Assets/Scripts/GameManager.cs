@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
         {
             BallsManager.Instance.DestroyAllBalls();
             IsGameStarted = false;
+            BallsManager.Instance.isInPlay = false;
             if (SceneManager.GetActiveScene().name != "Level4") // Last level.
             {
                 i++;

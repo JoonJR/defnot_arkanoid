@@ -55,6 +55,7 @@ public class PauseMenu : MonoBehaviour
         if(SceneManager.GetActiveScene().name == "Level4" && BrickManager.Instance.AreAllBricksDestroyed() && !highScoreAdded) {
             int finalScore = ScoreManager.Instance.score;
             HighScoreManager.Instance.AddHighScore(finalScore);
+            BallsManager.Instance.isInPlay = false;
             highScoreAdded = true;
             gameWonUI.SetActive(true);
             GameIsPaused = true;
@@ -70,6 +71,7 @@ public class PauseMenu : MonoBehaviour
         // Disable 
         if(SceneManager.GetActiveScene().name == "MainMenu")
         {
+            BallsManager.Instance.isInPlay = false;
             highScoreAdded = false;
             gameWonUI.SetActive(false);
             gameOverUI.SetActive(false);

@@ -6,6 +6,7 @@ public class Paddle : MonoBehaviour
     private static Paddle _instance;
     public static Paddle Instance => _instance;
 
+    public AudioClip paddleHit;
     public float moveSpeed = 10.0f;
     private Vector3 originalScale;
     private Coroutine sizeChangeCoroutine;
@@ -112,8 +113,9 @@ public class Paddle : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ball")
+        if (collision.gameObject.tag == "Ball" & BallsManager.Instance.isInPlay)
         {
+            AudioManager.Instance.PlayEffect(paddleHit);
             Rigidbody2D ballRb = collision.gameObject.GetComponent<Rigidbody2D>();
             Vector3 hitPoint = collision.contacts[0].point;
             Vector3 paddleCenter = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y);
@@ -121,6 +123,7 @@ public class Paddle : MonoBehaviour
             ballRb.velocity = Vector2.zero;
 
             float difference = paddleCenter.x - hitPoint.x;
+            
             if (hitPoint.x < paddleCenter.x)
             {
                 ballRb.AddForce(new Vector2(-(Mathf.Abs(difference * 200)), BallsManager.Instance.initialBallSpeed));

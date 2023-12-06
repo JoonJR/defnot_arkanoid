@@ -10,23 +10,30 @@ public class LivesDisplay : MonoBehaviour
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
-    
+   
     void Start()
     {
         UpdateHeartDisplay();
     }
     private void Update()
     {
+        GameObject hearthPanel = GameObject.FindWithTag("HearthPanel");
         if (SceneManager.GetActiveScene().name == "MainMenu" || SceneManager.GetActiveScene().name == "Settings" || SceneManager.GetActiveScene().name == "Difficulty" || SceneManager.GetActiveScene().name == "Nickname" || SceneManager.GetActiveScene().name == "HiScores")
         {
+            
             SetHeartsActive(false);
+            
         }
         else
         {
             SetHeartsActive(true);
+            
         }
         if (SceneManager.GetActiveScene().name == "Level1")
         {
+
+           
+
             UpdateHeartDisplay();
         }
     }

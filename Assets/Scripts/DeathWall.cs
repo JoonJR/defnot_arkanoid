@@ -12,7 +12,8 @@ public class DeathWall : MonoBehaviour
         if(ball != null){
             AudioManager.Instance.PlayEffect(loseLifeClip);
             ball.DestroyBall();
-            
+            BallsManager.Instance.isInPlay = false;
+
         }
     }
     
