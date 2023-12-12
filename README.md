@@ -13,6 +13,19 @@ This project is a modern reimagining of the classic Arkanoid game. Developed in 
 ## Visuals
 ![Gameplay](https://github.com/JoonJR/defnot_arkanoid/blob/main/Assets/Readme/Gameplay.gif)
 
+## Installation
+To play the game, follow these steps:
+
+1. Clone the repository: git clone https://github.com/JoonJR/defnot_arkanoid.git
+2. Open the project in Unity.
+3. Run the "Loading" scene to start the game.
+
+OR 
+
+Play the game in Itch.io 
+
+https://manqq.itch.io/defnotarkanoidv2
+
 ## How to Play
 - Use the arrow keys or mouse to move the paddle horizontally.
 - Break all the bricks to complete a level.
