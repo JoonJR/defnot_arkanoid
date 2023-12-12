@@ -7,34 +7,30 @@ public class LivesDisplay : MonoBehaviour
     private static LivesDisplay _instance;
     public static LivesDisplay Instance => _instance;
 
-    public Image[] hearts;
-    public Sprite fullHeart;
-    public Sprite emptyHeart;
-   
+    public Image[] hearts; // Array to hold heart images
+    public Sprite fullHeart;  // Sprite for a full heart
+    public Sprite emptyHeart; // Sprite for an empty heart
+
     void Start()
     {
-        UpdateHeartDisplay();
+        UpdateHeartDisplay(); // Update the heart display on start
     }
     private void Update()
     {
+        // Check if the current scene requires displaying hearts
         GameObject hearthPanel = GameObject.FindWithTag("HearthPanel");
         if (SceneManager.GetActiveScene().name == "MainMenu" || SceneManager.GetActiveScene().name == "Settings" || SceneManager.GetActiveScene().name == "Difficulty" || SceneManager.GetActiveScene().name == "Nickname" || SceneManager.GetActiveScene().name == "HiScores")
         {
-            
-            SetHeartsActive(false);
-            
+            SetHeartsActive(false); // Hide hearts in these scenes
         }
         else
         {
-            SetHeartsActive(true);
-            
+            SetHeartsActive(true); // Show hearts in game scenes
+
         }
         if (SceneManager.GetActiveScene().name == "Level1")
         {
-
-           
-
-            UpdateHeartDisplay();
+            UpdateHeartDisplay(); // Update hearts when Level 1 is loaded
         }
     }
     private void Awake()
@@ -49,6 +45,7 @@ public class LivesDisplay : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    // Method to show or hide heart images
     private void SetHeartsActive(bool isActive)
     {
         foreach (var heart in hearts)
@@ -56,7 +53,7 @@ public class LivesDisplay : MonoBehaviour
             heart.gameObject.SetActive(isActive);
         }
     }
-
+    // Method to update the heart display based on the player's lives
     public void UpdateHeartDisplay()
     {
         for (int i = 0; i < hearts.Length; i++)
@@ -71,7 +68,7 @@ public class LivesDisplay : MonoBehaviour
             }
         }
     }
-
+    // Method to set the number of lives and update the display
     public void SetLives(int newLives)
     {
         ScoreManager.Instance.lives = newLives;

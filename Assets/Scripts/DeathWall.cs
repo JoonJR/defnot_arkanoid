@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DeathWall : MonoBehaviour
 {
-    public AudioClip loseLifeClip;
+    public AudioClip loseLifeClip; // Sound effect for lose ball / life 
     private void OnCollisionEnter2D(Collision2D collision){
         
         Ball ball = collision.gameObject.GetComponent<Ball>();

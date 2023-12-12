@@ -10,12 +10,12 @@ public class BallsManager : MonoBehaviour
     public static BallsManager Instance => _instance;
 
     [SerializeField]
-    private Ball ballPrefab;
-    private Ball initialBall;
-    private Rigidbody2D initialBallRb;
-    public float initialBallSpeed = 250;
-    public bool isInPlay = false;
-    public List<Ball> Balls { get; private set; } = new List<Ball>();
+    private Ball ballPrefab; // Prefab for creating new balls
+    private Ball initialBall; // The initial ball in the game
+    private Rigidbody2D initialBallRb; // Rigidbody of the initial ball
+    public float initialBallSpeed = 250; // Speed at which the initial ball is launched
+    public bool isInPlay = false; // Flag to check if the ball is in play
+    public List<Ball> Balls { get; private set; } = new List<Ball>(); // List to keep track of all balls in play
 
     // Update is called once per frame
     void Update()
@@ -37,8 +37,7 @@ public class BallsManager : MonoBehaviour
                     initialBallRb.isKinematic = false;
                     initialBallRb.AddForce(new Vector2(0, initialBallSpeed));
                     GameManager.manager.IsGameStarted = true;
-                }
-                
+                }  
             }
         }
     }
@@ -74,6 +73,7 @@ public class BallsManager : MonoBehaviour
         }
     }
 
+    // Initialize the first ball of the game
     public void InitBall()
     {
         Vector3 paddlePosition = Paddle.Instance.gameObject.transform.position;
@@ -84,6 +84,8 @@ public class BallsManager : MonoBehaviour
         Balls.Clear();
         Balls.Add(initialBall);
     }
+
+    // Change the speed of all balls in play
     public void ChangeBallSpeed(float newSpeed)
     {
         foreach (Ball ball in Balls)
@@ -91,6 +93,8 @@ public class BallsManager : MonoBehaviour
             ball.SetSpeed(newSpeed);
         }
     }
+
+    // Get the original speed of the ball based on the difficulty level
     public float GetOriginalBallSpeed()
     {
         float baseSpeed = 10f; // Base speed
@@ -110,6 +114,7 @@ public class BallsManager : MonoBehaviour
         return baseSpeed * difficultyMultiplier;
     }
 
+    // Remove a specific ball from the game
     public void RemoveBall(Ball ball)
     {
         Balls.Remove(ball);
@@ -119,6 +124,8 @@ public class BallsManager : MonoBehaviour
             HandleNoBallsLeft();
         }
     }
+
+    // Handle the situation when there are no balls left in the scene
     private void HandleNoBallsLeft()
     {
         // Deduct a life and spawn a new initial ball
@@ -139,7 +146,7 @@ public class BallsManager : MonoBehaviour
         Balls.Clear(); // Clear the list after all balls are destroyed
     }
 
-    
+    // Spawn additional balls in the game
     public void SpawnExtraBalls(int count)
     {
         for (int i = 0; i < count; i++)
@@ -153,7 +160,8 @@ public class BallsManager : MonoBehaviour
             Balls.Add(newBall);
         }
     }
-        private Vector2 GetRandomDirection()
+    // Generate a random direction for the ball
+    private Vector2 GetRandomDirection()
     {
         float x = Random.Range(-1f, 1f);
         float y = Random.Range(0.5f, 1f); // Ensuring the ball goes upwards

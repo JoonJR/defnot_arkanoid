@@ -1,19 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class PauseMenu : MonoBehaviour
 {
-    public bool GameIsPaused = false;
-    public GameObject pauseMenuUI;
-    public GameObject gameWonUI;
-    public GameObject gameOverUI;
-    public TextMeshProUGUI finalScoreText;
-    public TextMeshProUGUI gameOverScoreText;
+    public bool GameIsPaused = false; // Tracks if the game is currently paused
+    public GameObject pauseMenuUI; // Reference to the pause menu UI 
+    public GameObject gameWonUI; // Reference to the game won UI
+    public GameObject gameOverUI; // Reference to the game over UI 
+    public TextMeshProUGUI finalScoreText; // Text element for displaying the finawl score
+    public TextMeshProUGUI gameOverScoreText; // Text element for displaying the game over score
 
     private bool highScoreAdded = false; // Flag to track if high score has been added
     public HighScoreManager highScoreManager;
@@ -36,9 +32,9 @@ public class PauseMenu : MonoBehaviour
         // Update is called once per frame
     void Update()
     {
+        // Handle pause menu activation/deactivation
         if (SceneManager.GetActiveScene().name != "MainMenu" & SceneManager.GetActiveScene().name != "Settings" & SceneManager.GetActiveScene().name != "Difficulty")
         {
-            
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 if (GameIsPaused)
@@ -51,6 +47,7 @@ public class PauseMenu : MonoBehaviour
                 }
             }
         }
+
         // If we are in last level and all bricks are destroyed, game is over. 
         if(SceneManager.GetActiveScene().name == "Level4" && BrickManager.Instance.AreAllBricksDestroyed() && !highScoreAdded) {
             int finalScore = ScoreManager.Instance.score;
@@ -63,11 +60,13 @@ public class PauseMenu : MonoBehaviour
             UpdateFinalScoreUI();
             ScoreManager.Instance.scoreText.enabled = false;
         }
-        if(SceneManager.GetActiveScene().name == "Level1")
+
+        // Handle UI updates for different scenes
+        if (SceneManager.GetActiveScene().name == "Level1")
         {
             ScoreManager.Instance.scoreText.enabled = true;
-            
         }
+
         // Disable 
         if(SceneManager.GetActiveScene().name == "MainMenu")
         {
@@ -77,6 +76,8 @@ public class PauseMenu : MonoBehaviour
             gameOverUI.SetActive(false);
 
         }
+
+        // Handle game over scenario
         if (ScoreManager.Instance.lives == 0 && !highScoreAdded)
         {
             int finalScore = ScoreManager.Instance.score;
@@ -90,12 +91,15 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    // Resume the game from pause
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
+
+    // Pause the game
     private void Pause()
     {
         pauseMenuUI.SetActive(true);

@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Different difficulty levels
 public enum DifficultyLevel
 {
     Easy,
@@ -12,7 +11,6 @@ public enum DifficultyLevel
 
 public class GameManager : MonoBehaviour
 {
-
     public static GameManager manager;
     
     public static DifficultyLevel CurrentDifficulty { get; set; } = DifficultyLevel.Normal; // Default difficulty
@@ -21,13 +19,12 @@ public class GameManager : MonoBehaviour
     public string currentLevel = "Level" + 1;
     public int i = 1;
 
-    
-
     // Update is called once per frame
     void Update()
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
         
+        // if we are on level scene, check the completion.
         if (currentSceneName == "Level1" || currentSceneName == "Level2" || currentSceneName == "Level3" || currentSceneName == "Level4")
         {
             CheckLevelCompletion();
@@ -51,6 +48,7 @@ public class GameManager : MonoBehaviour
     {
         CurrentDifficulty = difficulty;
     }
+    // Check if current level is completed
     void CheckLevelCompletion()
     {
         if (BrickManager.Instance.AreAllBricksDestroyed())
