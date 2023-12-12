@@ -35,7 +35,8 @@ https://manqq.itch.io/defnotarkanoidv2
 ## Technologies Used
 - Unity
 - C#
-
+- Photoshop
+  
 ## Authors and Acknowledgment
 manQQ - Initial work and development.
 Special thanks to various online resources and tutorials that provided guidance and inspiration.
